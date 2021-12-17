@@ -1,8 +1,19 @@
+:root{
+  --text--white:#fff;
+  --btn--color:#29a9ff;
+  --grey:#6c757d;
+  --pink--hover:rgba(255, 164, 2, 0.4);
+  --secondary-button:#5d2057;
+  --white--grey:rgba(136, 133, 133, 0.05);
+  --simple:#f2f2f2;
+  --red--danger:red;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif, Nunito Sans,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

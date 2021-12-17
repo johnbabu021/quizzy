@@ -1,0 +1,19 @@
+.main__sidebar{
+   max-width: 100px;
+    position:fixed;
+    bottom:0;
+    display: grid;
+    height: 100%;
+    place-content: center;
+    padding: 20px;
+    background-color: var(--text--color);
+    border-right: 2px   solid   var(--grey);
+    align-content: center;
+   
+}
+
+.main__sidebar>p{
+    border-bottom: 1px  solid   var(--grey);
+    cursor: pointer;
+   
+}

@@ -1,0 +1,23 @@
+.major__quiz
+{
+    display: grid;
+    place-content: center;
+    height: 90vh;
+}
+.quiz__elements{
+    background-color: white;
+    min-width: 400px;
+    min-height: 250px;
+    padding: 2rem;
+    box-shadow: 2px 2px 15px    0.6px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.answers{
+    display: flex;
+    flex-direction: column;
+    
+}

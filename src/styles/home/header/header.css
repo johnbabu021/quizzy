@@ -1,0 +1,43 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top:0;
+    background-color: var(--text--white);
+    min-height: 80px;
+    z-index:1;
+}
+.icon{
+    cursor: pointer;
+}
+.icon__right,.right__side{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon__right>p,.right__side>p{
+    padding: 10px;
+    font-size: 19px !important;
+    border-radius: 10px;
+    margin:0 4px;
+    transition: 0.4s    ease-in-out;
+    cursor: pointer;
+
+}
+
+.right__side>p:nth-child(2),.right__side>p:nth-child(3){
+    background-color: var(--secondary-button);
+    color: white;
+}
+.icon__right>p:hover,.right__side>p:hover:not(.right__side>p:nth-child(2),.right__side>p:nth-child(3)){
+    background-color: var(--pink--hover);
+
+}
+
+
+
+.icon__right>p:active,.right__side>p:active:not(.right__side>p:nth-child(2),.right__side>p:nth-child(3)),.icon__right>p:focus,.right__side>p:focus:not(.right__side>p:nth-child(2),.right__side>p:nth-child(3)),.icon__right>p:visited,.right__side>p:visited:not(.right__side>p:nth-child(2),.right__side>p:nth-child(3)){
+    background-color: var(--simple);
+
+}
