@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import  '../styles/login/home.css'
 export  default function        SignUp(){
-let location=useLocation()
+// let location=useLocation()
 const   nameRef=useRef(null)
 const   emailRef=useRef(null)
 const   passwordRef=useRef(null)

@@ -31,7 +31,7 @@ let     mni
             <div    className='main__search'>
                
             
-                <p>Fetch your questions from here!!</p>
+                <p>Find your topics</p>
                     <input  type="text" {...search} placeholder='search...' />
                     <div  className='gradient__cont'>
 
@@ -47,7 +47,7 @@ let     mni
                            }
                            {mni.length===0&&<div  className='not__found'  > 
                            <p>Oops!! no data found</p>
-                           <img  src="/search.svg"/>  </div>}
+                           <img  src="/search.svg"  alt=""/>  </div>}
 
 
                             </div>

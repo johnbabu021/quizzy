@@ -1,15 +1,10 @@
 import Checkbox from "antd/lib/checkbox/Checkbox"
-import { useEffect } from "react"
+// import { useEffect } from "react"
 import  '../styles/playground/item/home.css'
 import { Button } from 'antd';
 import  '../styles/login/home.css'
 export  default   function  MajorQuiz({item:{results}}){
-let     questions
-    useEffect(()=>{
-         questions=results
-         console.log(questions[0],"questions")
 
-    },[])
     function myFun(checkbox) {
         var checkboxes = document.getElementsByName('game')
     console.log(checkboxes[0].checked)
