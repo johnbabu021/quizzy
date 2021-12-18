@@ -29,17 +29,27 @@ let     mni
             <div    className='teacher__contents'>
 
             <div    className='main__search'>
+               
+            
                 <p>Fetch your questions from here!!</p>
-                    {/* <p>What you want to search</p> */}
                     <input  type="text" {...search} placeholder='search...' />
+                    <div  className='gradient__cont'>
+
               </div>
-                            <div    className='playground__container'>
+              </div>
+              
+                            <div    className={`${mni.length>0&&'playground__container'}`}>
                            {
-                               mni.map(item=>(<p   className='item_container'>{item.name}</p>))
+                               mni.map((item,index)=>(<p key={index}  className='item_container'>{item.name}</p>))
 
 
                             
                            }
+                           {mni.length===0&&<div  className='not__found'  > 
+                           <p>Oops!! no data found</p>
+                           <img  src="/search.svg"/>  </div>}
+
+
                             </div>
 
             </div>

@@ -1,7 +1,7 @@
 .teacher__component{
     display: flex;
-  justify-content:center;
-    height: 100vh;
+   /* background-color: rgb(204, 255, 228); */
+      justify-content:center;
     gap:2rem;
     /* background-color: var(--pink--hover); */
 }
@@ -9,16 +9,36 @@
     flex:0.1;
 }
 .teacher__contents{
-    flex:0.9;
+    flex:1;
+    min-height: 100vh;
+    width: inherit;
 }
 .main__search{
     display: grid;
+    position: relative;
+    min-height: 60vh;
+    background-image:  url(/public/icon.svg);
+    background-attachment: scroll;
+    background-position:0ch;
+    background-size:cover;
+    
+    background-repeat: no-repeat;
+    /* border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px; */
+
     place-items: center;
-    min-height: 250px;
 /* min-width: 90vw; */
     width: 100%;
    
 }
+.gradient__cont{
+background:linear-gradient(to  top,rgba(255,255,255,0.8),rgba(255,255,255,0.1));
+height: 20px;
+position: absolute;
+bottom: 0;
+width: 100%;
+}
+
 .main__search>p{
     font-size: 30px;
     color: var(--btn--color);
@@ -51,3 +71,17 @@
     display: flex;
     flex-direction: column;
 }
+
+
+.not__found{
+    display: grid;
+    place-items: center;
+}
+  
+  .not__found>img{
+      max-height: 20vh;
+      max-width: 20vw;
+  }
+  .not__found>p{
+      color: var(--btn--color);
+  }

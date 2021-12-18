@@ -1,14 +1,11 @@
 import  '../../styles/home/sidebar/sidebar.css'
-
-
+import  {sidebar}   from    '../../constants/sidebar/main'
 export  default     function        Sidebar(){
     return(
         <div    className="main__sidebar">
-            <p>Explore</p>
-            <p>My library</p>
-            <p>Reports</p>
-            <p>Classes</p>
-            <p>Settings</p>
+           {
+               sidebar.map(({name,Icon})=>(<p onClick={(e)=>console.log(e.target.getAttribute('border'))}  key={name}>{Icon&&<Icon/>}{name}</p>))
+           }
         </div>
     )
 }
