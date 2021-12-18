@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     min-height: 100vh;
     padding-top:2rem;
-    margin:0 2rem;
+    /* margin:0 2rem; */
 
 }
 .item_container{
@@ -26,4 +26,9 @@
     border:1px  solid   var(--btn--color);
     box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.2);
 
+}
+
+@media(max-width:760px){
+    .item_container{
+    }
 }

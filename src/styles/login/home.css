@@ -1,7 +1,7 @@
 .login{
-    display: grid;
+    /* display: grid; */
     height: 100vh;
-    place-items: center;
+    /* place-items:center; */
     font-family: Nunito Sans, sans-serif;
     /* background-color: aquamarine; */
     background-image:url(/public/background.svg) ;
@@ -13,6 +13,9 @@
 
 .login_child
 {
+    position:absolute;
+    top:20%;
+    left: 20%;
     background-color: var(--text--white);
     /* box-shadow: 4px 4px 20px 2px   rgba(0,0,0,0.4); */
     padding: 20px  40px  20px  40px;
@@ -72,4 +75,18 @@ font-size: 15px;
 }
 .err{
     color: var(--red--danger);
+}
+
+@media(max-width:700px){
+    .login{
+        background-image: url('/public/minback.svg');
+        }   
+        .login_child{
+            top:20%;
+            left:2%;
+            max-width: 75vw;
+        }
+        .login_child>input{
+            max-width: 75vw;
+        }
 }

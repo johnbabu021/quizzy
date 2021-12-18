@@ -10,6 +10,7 @@
 }
 .icon{
     cursor: pointer;
+    font-weight: bolder;
 }
 .icon__right,.right__side{
     display: flex;
@@ -40,4 +41,11 @@
 .icon__right>p:active,.right__side>p:active:not(.right__side>p:nth-child(2),.right__side>p:nth-child(3)),.icon__right>p:focus,.right__side>p:focus:not(.right__side>p:nth-child(2),.right__side>p:nth-child(3)),.icon__right>p:visited,.right__side>p:visited:not(.right__side>p:nth-child(2),.right__side>p:nth-child(3)){
     background-color: var(--simple);
 
+}
+
+
+@media(max-width:760px){
+    .header{
+        visibility: hidden;
+    }
 }

@@ -3,7 +3,7 @@ import  '../../styles/home/teacherContent/home.css'
 import Sidebar from '../sidebar/sidebar'
 import  '../../styles/playground/home.css'
 import InputHandler from '../../hooks/InputHandler'
-
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 export  default     function    TeacherContent(){
     const   [programs,setPrograms]=useState([])
     useEffect(()=>{
@@ -31,7 +31,10 @@ let     mni
             <div    className='main__search'>
                
             
-                <p>Find your topics</p>
+               <div className='main__contain'>
+               <p><div>Find</div> your topics</p>
+                <button>Get Started<ArrowForwardIosIcon/></button>
+               </div>
                     <input  type="text" {...search} placeholder='search...' />
                     <div  className='gradient__cont'>
 
