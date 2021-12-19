@@ -4,7 +4,7 @@ import Sidebar from '../sidebar/sidebar'
 import  '../../styles/playground/home.css'
 import InputHandler from '../../hooks/InputHandler'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Tooltip } from 'antd';
+// import { Tooltip } from 'antd';
 
 export  default     function    TeacherContent(){
     const   [programs,setPrograms]=useState([])
