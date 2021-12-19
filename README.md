@@ -1,4 +1,4 @@
-<!-- <img    src="/public/"/> -->
+<img    src="/public/"https://github.com/johnbabu021/quizzy/blob/master/public/Frame%202.png"/>
 
 
 
