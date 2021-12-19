@@ -1,4 +1,6 @@
-<!-- <img    src="/public/"/> -->
+<p  align="center"><img src="https://github.com/johnbabu021/quizzy/blob/master/public/mainIcon.svg"/></p>
+
+<img    src="https://github.com/johnbabu021/quizzy/blob/master/public/Frame%202.png"/>
 
 
 
