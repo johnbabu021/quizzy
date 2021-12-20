@@ -4,16 +4,18 @@ import Sidebar from '../sidebar/sidebar'
 import  '../../styles/playground/home.css'
 import InputHandler from '../../hooks/InputHandler'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Loading from '../loader/Loading'
+import callApi from '../../utils/callApi'
 // import { Tooltip } from 'antd';
 
 export  default     function    TeacherContent(){
     const   [programs,setPrograms]=useState([])
     useEffect(()=>{
-        fetch('https://opentdb.com/api_category.php')
-        .then(item=>
-              item.json())
-            .then(res=>{setPrograms(res.trivia_categories).toLowerCase()})
-            .catch((err)=>console.warn(err))
+        async       function        fetchData(){
+            const   res=    await   callApi('https://opentdb.com/api_category.php')
+        setPrograms(res.trivia_categories)
+        }
+        fetchData()
     },[])
     const   search=InputHandler()
 let     mni
@@ -34,7 +36,7 @@ let     mni
                
             
                <div className='main__contain'>
-               <p><div>Find</div> your topics</p>
+               <p><p>Find</p> your topics</p>
                 <button>Get Started<ArrowForwardIosIcon/></button>
                </div>
                     <input  type="text" {...search} placeholder='search...' />
@@ -44,16 +46,18 @@ let     mni
               </div>
               
                             <div    className={`${mni.length>0&&'playground__container'}`}>
-                           {
-                               mni.map((item,index)=>(<p key={index}  className='item_container'>{item.name}</p>))
-
-
+                          
+                        {
+                            programs.length!==0?   
+                        mni.map((item,index)=>(<p key={index}  className='item_container'>{item.name}</p>))
+                        
+                            :<Loading/>
                             
-                           }
-                           {mni.length===0&&<div  className='not__found'  > 
+                        }
+                          {(mni.length===0&&typeof  mni !=='undefined')&&(<div  className='not__found'  > 
                            <p>Oops!! no data found</p>
-                           <img  src="/search.svg"  alt=""/>  </div>}
-
+                           <img  src="/search.svg"  alt=""/>  </div>)}
+                        
 
                             </div>
 
