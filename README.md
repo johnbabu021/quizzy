@@ -9,9 +9,9 @@
 
 
 ### build with
-*reactjs
-*firebase v-9
-*react-router-dom v-6
+* reactjs
+* firebase v-9
+* react-router-dom v-6
 
 
 
