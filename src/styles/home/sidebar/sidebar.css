@@ -46,9 +46,9 @@
  
 } */
 
-.border__click{
+/* .border__click{
     color: var(--secondary-button);
-}
+} */
 
 .border__normal::after{
     content:'';
@@ -58,7 +58,7 @@
     width: 5px;
     height: 0px;
     transition: 0.3s    ease-in-out;
-    background-color: var(--secondary-button);
+    /* background-color: var(--secondary-button); */
 
 }
 .border__click::after{
@@ -92,7 +92,7 @@
     border-radius: 5px;
     width: 120px;
     height: 70px;
-    background-color: var(--simple);
+    /* background-color: var(--simple); */
 }
 
 @media(max-width:760px){

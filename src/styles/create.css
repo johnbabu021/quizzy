@@ -1,0 +1,92 @@
+.game{
+    color:blue
+}
+.form__contents{
+    flex:0.8
+}
+.form__row{
+    display: grid;
+width: 100%;
+height: 100%;
+    place-items: center;
+}
+.create__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 400px;
+    width: 400px;
+    text-align: start;
+    gap:20px;
+}
+.create__form>label{
+    color: blue;
+}
+.create__form>input{
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 8px;
+padding:8px;
+}
+.create__form>input:focus{
+    border:2px solid var(--secondary-button)
+}
+.submit__button{
+    width:100px;
+    margin-left: auto;
+    outline:none;
+    border:none;
+    padding:8px;
+    border-radius:8px;
+    cursor: pointer;
+    box-shadow:0 8px 0 var(--secondary-button);
+    background:rgba(123, 224, 105, 0.933);
+    transition: 0.2s ease-in-out;
+}
+.submit__press{
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 var(--secondary-button);
+}
+
+
+.document__id{
+    display: grid;
+    place-items: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    background:white;
+    box-shadow: 2px 2px 15px 0px rgba(0,0,0,0.2);
+    padding: 40px;
+    width: 150px;
+    border-radius: 10px;
+    color: black;
+    position: relative;
+    height: 200px;
+}
+
+
+
+.document__id>label{
+    position: absolute;
+    top:40px;
+}
+
+.code{
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+.document__cont{
+    display: flex;
+    gap:40px
+}
+.button__create{
+color:white !important;
+}
+.button__create{
+    position: absolute  !important;
+    bottom: 20px !important;
+    background-color:var(--secondary-button) !important;
+}

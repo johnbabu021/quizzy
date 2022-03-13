@@ -3,15 +3,21 @@
   --btn--color:#29a9ff;
   --grey:#6c757d;
   --pink--hover:rgba(255, 164, 2, 0.4);
-  --secondary-button:rgb(16, 185, 129);
+  --secondary-button:rgb(12, 155, 107);
   --white--grey:rgba(136, 133, 133, 0.05);
   --simple:#f2f2f2;
+  --round:#292935;
+  --playground--color:#429254;
+  --playground-background--color:#2a522c;
   --red--danger:red;
+  --blue:rgba(30, 223, 120, 0.575);
   --blue--opacitied:linear-gradient(#afffe396,#e1fcee36);
+  font-family: gordita,Helvetica Neue,Helvetica,sans-serif;
 }
 
 body {
   margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif, Nunito Sans,sans-serif;

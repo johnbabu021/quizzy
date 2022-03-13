@@ -1,5 +1,9 @@
 module.exports={
-    LOGIN:"/login",
-    SIGNUP:"/signup",
-    PLAYGROUND:"/playground"
+    PLAYGROUND:"/playground",
+    CREATE:"/create",
+    CREATEFORM:'/create/form',
+    REPORTS:'/reports',
+    REPORTID:'/reports/:id',
+    MYLIBRARY:'/mylibrary',
+    JOIN:'/join/:id'
 }

@@ -6,9 +6,9 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 
 export  const   sidebar=[
-    {name:"Explore",Icon:ExploreOutlinedIcon},
-    {name:"My Library",Icon:LocalLibraryOutlinedIcon},
-    {name:"Reports",Icon:AssessmentOutlinedIcon},
-    {name:"Classes",Icon:SchoolOutlinedIcon},
-    {name:"Settings",Icon:SettingsOutlinedIcon},
+    {name:"Explore",Icon:ExploreOutlinedIcon,direct:'/dashboard'},
+    {name:"My Library",Icon:LocalLibraryOutlinedIcon,direct:'/mylibrary'},
+    {name:"Reports",Icon:AssessmentOutlinedIcon,direct:'/reports'},
+    {name:"Practise",Icon:SchoolOutlinedIcon,direct:'/playground'},
+    {name:"Settings",Icon:SettingsOutlinedIcon,direct:'/settings'},
 ]

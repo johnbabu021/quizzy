@@ -1,26 +1,49 @@
+import Create from "../../core/create";
+import CreateForm from "../../core/form";
 import Home from "../../pages/home";
-import Login from "../../pages/login";
+import InitailFunction from "../../pages/initalPage";
 import PlayGround from "../../pages/playGround";
-import SignUp from "../../pages/signup";
 import  * as ROUTES from './names.js'
-
+import  Report from '../../pages/reports'
+import ReportId from "../../pages/reportId";
+import MyLibrary from "../../pages/myLibrary";
+import Join from "../../pages/join";
 
  const       routes=[
+ 
     {
-        path:ROUTES.LOGIN,
-        element:<Login/>
+path:'/',
+element:<InitailFunction/>
     },
     {
-        path:ROUTES.SIGNUP,
-        element:<SignUp/>
-    },
-    {
-        path:"/",
+        path:"/dashboard",
         element:<Home/>
     },
     {
         path:ROUTES.PLAYGROUND,
         element:<PlayGround/>
+    },
+    {
+        path:ROUTES.CREATE,
+        element:<Create/>
+    },
+    {
+        path:ROUTES.CREATEFORM,
+        element:<CreateForm/>
+    },{
+        path:ROUTES.REPORTS,
+        element:<Report/>
+    },{
+        path:ROUTES.REPORTID,
+        element:<ReportId/>
+    },
+    {
+        path:ROUTES.MYLIBRARY,
+        element:<MyLibrary/>
+    },
+    {
+        path:ROUTES.JOIN,
+        element:<Join/>
     }
 ]
 

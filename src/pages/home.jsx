@@ -3,16 +3,17 @@ import Header from "../components/home/header";
 // import Sidebar from "../components/sidebar/sidebar";
 import  '../styles/home/mainfile.css'
 import TeacherContent from "../components/teacher/content";
+import { useRef } from "react";
 export  default     function        Home(){
-
+const   CodeRef=useRef(null)
 
     return(
         <div    className="home">
 
-<Header/>
+<Header CodeRef={CodeRef}/>
 
 
-<TeacherContent/>
+<TeacherContent CodeRef={CodeRef}/>
 
 {/* <Content/> */}
 
