@@ -2,6 +2,8 @@
 import  '../../styles/home/teacherContent/home.css'
 import Sidebar from '../sidebar/sidebar'
 import { useNavigate } from 'react-router-dom'
+import { UserDetails } from '../../context/usercontext'
+import { useContext, useState } from 'react'
 
 // import InputHandler from '../../hooks/InputHandler'
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -11,19 +13,10 @@ import { useNavigate } from 'react-router-dom'
 
 export  default     function    TeacherContent({CodeRef}){
     let navigate=useNavigate()
-//     const   [programs,setPrograms]=useState([])
-//     useEffect(()=>{
-//         async       function        fetchData(){
-//             const   res=    await   callApi('https://opentdb.com/api_category.php')
-//         setPrograms(res.trivia_categories)
-//         }
-//         fetchData()
-//     },[])
-//     const   search=InputHandler()
-// let     mni
-//     const   searchArray=programs.map(item=>{return  {name:item.name.toLowerCase(),key:item.key}})
-//    mni=  searchArray.filter(item=>item.name.includes(search.value.toLowerCase()))
-   
+const   {state:{user}}=useContext(UserDetails)
+const    [compl,setComp]=useState(localStorage.getItem('completed'))
+const    [patci,setParti]=useState(localStorage.getItem('participated'))
+
     return(
 
         <div    className="teacher__component">
@@ -35,53 +28,69 @@ export  default     function    TeacherContent({CodeRef}){
             
 
             <div    className='teacher__contents'>
+<div    className='div__home'>
+    <h1>Hey {user?.displayName} here is your dashboard</h1>
+<header className='header__home'>
 
-<button className="game__button__home" onClick={(e)=>{
-    e.target.classList.add('pressed__create')
-    setTimeout(()=>e.target.classList.remove('pressed__create'),200)
+<button className="game__btn" onClick={()=>{
     navigate('/create')
 
 }
     
     }>create a game</button>
-<button className='game__button__home'  onClick={(e)=>{
-    e.target.classList.add('pressed__join')
-    setTimeout(()=>e.target.classList.remove('pressed__join'),200)
+<button className='game__btn'  onClick={()=>{
+  
 CodeRef.current.focus()
 
 }
     }>Join a game</button>
-{/* 
-            <div    className='main__search'>
-               
-            
-               <div className='main__contain'>
-               <p><p>Find</p> your topics</p>
-                <button>Get Started<ArrowForwardIosIcon/></button>
-               </div>
-                    <input  type="text" {...search} placeholder='search...' />
-                    <div  className='gradient__cont'>
+</header>
+<div    className='section__home'>
+<div    className="items__content">
+{patci}<hr/> new joined
+</div>
+<div    className="items__content">
+{compl}<hr/>completed
+</div>
+<div    className="items__content">
+120 <hr/>Quizes
+</div>
+</div>
 
-              </div>
-              </div>
-              
-                            <div    className={`${mni.length>0&&'playground__container'}`}>
-                          
-                        {
-                            programs.length!==0?   
-                        mni.map((item,index)=>(<p key={index}  className='item_container'>{item.name}</p>))
-                        
-                            :<Loading/>
-                            
-                        }
-                          {(mni.length===0&&typeof  mni !=='undefined')&&(<div  className='not__found'  > 
-                           <p>Oops!! no data found</p>
-                           <img  src="/search.svg"  alt=""/>  </div>)}
-                        
+<h1>Popular games</h1>
+<div    className='section__home'>
+<div    className="items__content">
+data
+</div>
+<div    className="items__content">
+data
+</div>
+<div    className="items__content">
+data
+</div>
 
-                            </div>
 
-           */}
+
+
+
+</div>
+
+
+<h1>your Popular games</h1>
+<div    className='section__home'>
+<div    className="items__content">
+data
+</div>
+<div    className="items__content">
+data
+</div>
+<div    className="items__content">
+data
+</div>
+</div>
+
+</div>
+
                 </div>   
         </div>
     )

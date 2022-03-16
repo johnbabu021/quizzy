@@ -43,7 +43,6 @@ useEffect(()=>{
     }
 })
 useEffect(()=>{
-    console.log(Null)
     if(Null==='not found'){
         toast.error('enter a valid code')
     }
@@ -63,6 +62,8 @@ const   login={
     .then((result)=>
     {
         dispatch({type:'login',user:result.user})
+        localStorage.setItem('user',JSON.stringify(result?.user))
+        
     }
     ).catch((e)=>{
         console.log(e)
@@ -91,8 +92,14 @@ const   home={
                 <Button onClick={async()=>{
                     if(joinCode.value===''){
                         
-                        toast.error('you should enter a code to join')
-                    }
+                        toast((t) => (
+                            <span  >
+                              you should enter a code
+                              <button   style={{color:'#3d71a1',padding:'2px',marginLeft:'2px',border:'none',cursor:'pointer',background:'none'}} onClick={() => toast.dismiss(t.id)}>
+                                Close
+                              </button>
+                            </span>
+                          ));                    }
                     else{
                      const  data=   await getDocs(collection(db,'created'))
                      setNull('')
@@ -131,6 +138,7 @@ src={user.photoURL}/>
 
 <Button onClick={()=>signOut(auth).then(()=>{
     dispatch({type:'logout'})
+    localStorage.setItem('user',null)
 }).catch((e)=>{
     console.log(e)
 })

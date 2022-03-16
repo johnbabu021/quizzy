@@ -70,7 +70,7 @@ useEffect(()=>{
 
 </div>
 
-           {/* <div className='teacher__cotents'> */}
+           <div className='teacher__contents'>
            <div className='main__div'   >
 {
   created.map((item,index)=>(
@@ -97,7 +97,7 @@ useEffect(()=>{
       onClick={()=>{
           navigate(`/reports/${item.id}`)
       }}
-      >Choose plan</button>
+      >Choose game</button>
     </div>
   
   </div>
@@ -112,7 +112,7 @@ useEffect(()=>{
       </div >
                </div> 
         </div>
-    //    </div>
+  </div>
       
     )
 }

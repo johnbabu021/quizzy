@@ -1,10 +1,12 @@
 .header{
     display: flex;
+    z-index: inherit;
     align-items: center;
     justify-content: space-around;
     position: sticky;
     top:0;
     min-height: 80px;
+    letter-spacing: 1.2px;
     backdrop-filter: blur(5px);
     color: var(--secondary-button);
     z-index:1;
@@ -74,16 +76,16 @@
     background-color: white;
     box-shadow: 2px 2px 15px 1px rgba(0,0,0,0.2);
     padding: 20px 10px;
-    animation: came 0.5s linear;
+    /* animation: came 0.5s linear; */
 }
-@keyframes came{
+/* @keyframes came{
     0%{
         transform: translateY(-100%);
     }
     100%{
         transform: translateY(18%);
     }
-}
+} */
 
 .input__btn{
 outline: none;

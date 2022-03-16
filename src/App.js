@@ -7,7 +7,6 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserDetails } from './context/usercontext';
 import { db } from './constants/firebase';
 import { addDoc, collection, getDocs } from 'firebase/firestore';
-import { ConnectingAirportsOutlined } from '@mui/icons-material';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -18,8 +17,9 @@ function App() {
                     onAuthStateChanged(auth,(user)=>{
                       if(user){
                         dispatch({type:'login',user:user})
-                      
+                          localStorage.setItem('user',JSON.stringify(user))
 
+                        
                       }
                       else{
                         console.log('asdf')
@@ -52,6 +52,14 @@ console.log('alreay a user')
               initialize()
   }
     ,[user])
+
+useEffect(()=>{
+const   userDetails=localStorage.getItem('user')
+if(userDetails){
+  dispatch({type:'login',user:JSON.parse(userDetails)})
+}
+},[])
+
   return (
     <div className="App">
       <Routes>

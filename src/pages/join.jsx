@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { arrayUnion, collection, doc, onSnapshot, query, updateDoc, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useParams, useSearchParams } from "react-router-dom";
 import Header from "../components/home/header";
 import Loading from "../components/loader/Loading";
@@ -40,7 +41,7 @@ const       updateQuery=onSnapshot(q,(onSnapshot)=>{
     doc.data().completed?.map((userDocId)=>{
              console.log(doc.data(),user.uid,userDocId.id)
  if(userDocId.id===user.uid){
-     console.log('already joined')
+     toast.error('you\'ve already joined to this game')
  
  }
  else{
@@ -74,7 +75,7 @@ const       updateQuery=onSnapshot(q,(onSnapshot)=>{
 </div>
 <div    className="teacher__contents">
 
-{details?<MajorQuiz  item={{results:details.questionItems}}/>:
+{details?<MajorQuiz  item={{results:details.questionItems}} id={id}/>:
 <Loading/>}
 </div>
 

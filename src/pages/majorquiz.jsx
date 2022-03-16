@@ -3,11 +3,18 @@ import  '../styles/playground/item/home.css'
 import { Button } from 'antd';
 import  '../styles/login/home.css'
 // import Loading from "../components/loader/Loading";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 import      toast ,{Toaster} from 'react-hot-toast'
-export  default   function  MajorQuiz({item:{results},options=4}){
-    console.log(results)
+import { arrayUnion, doc, onSnapshot, updateDoc } from 'firebase/firestore';
+import { db } from '../constants/firebase';
+import { async } from '@firebase/util';
+import { UserDetails } from '../context/usercontext';
+export  default   function  MajorQuiz({item:{results},id=null}){
+const       [itemLength,setItemLength]=useState(10)
+
+const   [completed,setCompleted]=useState(false)
+const   {state:{user}}=useContext(UserDetails)
 const   [question,setQuestion]=useState(null)
 const   [score,setScore]=useState(0)
 const   notify=()=>{
@@ -65,16 +72,15 @@ return  item.incorrect_answers.map(data=>{
 })
 
 
-useEffect(()=>{
-
-if(resultItem&&newItem){
-    setQuestion(newItem[0])
-
-
-}
-},[])
 
 useEffect(()=>{
+    setItemLength(results.length)
+
+    if(resultItem&&newItem){
+        setQuestion(newItem[0])
+    
+    
+    }
  try{   if(results.length!==0){
     setResult(item=>[...item,{id:0,option:results[0].correct_answer}])
     for(let i=1;i<=resultItem[0].length;i++){
@@ -93,7 +99,7 @@ catch(e){
    
 
 
-const       handleQuestionSubmit=(e)=>{
+const       handleQuestionSubmit=async(e)=>{
     try{
         const   form=document.getElementById('ansform')
         const       formData=new FormData(form)
@@ -131,9 +137,18 @@ e.target.disabled=true
                 submitted.parentNode.children[2].style.border="5px solid #aaa"
                 correct.parentNode.children[2].style.border="5px solid #aaa"
 setSubmit(false)
-                console.log(result)
                 submitted.parentNode.children[1].classList.remove('red')
-
+if(results.length===1){
+    setCompleted(true)
+    if(id&&user){
+        onSnapshot(doc(db,'created',id),async(snapDoc)=>{
+            await       updateDoc(doc(db,'created',id),{
+                completed:arrayUnion({id:user.uid,score:score})
+            })
+        })
+       
+    }
+}
                 correct.parentNode.children[1].classList.remove('da')
             newItem.shift()
             results.shift()
@@ -186,8 +201,8 @@ cont.setAttribute('data-pct',Number(score))
 
 
            </form>
-    ):(<div>{score} / {10}</div>)}
-   <Button  className={`login_btn    submit `}   onClick={(e)=>handleQuestionSubmit(e)}>{!submit&&'Submit'}
+    ):(<div>{score} / {itemLength}</div>)}
+ {!completed&&  <Button  className={`login_btn    submit `}   onClick={(e)=>handleQuestionSubmit(e)}>{!submit&&'Submit'}
 { submit&& 
  <svg    width={'60px'}  height="40px"  viewBox='0 0 36 46' className={`${submit&&'button__load'}`}>
    <circle
@@ -199,7 +214,7 @@ cont.setAttribute('data-pct',Number(score))
    fill="none"
   ></circle>
        </svg>}
-       </Button>
+       </Button>}
    {/* <Toaster
     po  tion="top-right"
     reverseOrder={false}

@@ -4,11 +4,11 @@ body {
   
 
 .main__div{
-   display: flex;
-   justify-content: space-between;
-   min-width: 100vh;
+display: flex;
+  flex-wrap: wrap;
    justify-content: space-between;
 padding-left: 50px;
+gap:40px;
 }
   
   .pricing {
@@ -18,8 +18,8 @@ padding-left: 50px;
     flex-wrap: wrap;
     -webkit-justify-content: center;
     justify-content: center;
-    width: 100%;
-    margin: 0 auto 3em;
+   /* width: 100%;
+    margin: 0 auto 3em; */
   }
   .pricing-item {
     position: relative;

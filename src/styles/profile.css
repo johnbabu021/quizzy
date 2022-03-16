@@ -1,0 +1,49 @@
+.profile__parent{
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+}
+.profile__container>img {
+    width: 100px;
+    height: 100px;
+}
+.name{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.profile__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
+}
+/* .name__container{
+    displ;
+} */
+.profile{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.gray{
+    color: gray;
+}
+.green{
+    font-size: 25px;
+    color: var(--secondary-button);
+}
+.profile__change{
+    display: flex;
+    flex-direction: column;
+    gap:0.8em;
+}
+.input>input{
+    outline: none;
+    width: 70%;
+    border: 2px solid #7c7c7c;
+    border-radius: 10px;
+    padding: 8px;
+}
+.input>input:focus{
+    border: 2px solid var(--secondary-button);
+}
