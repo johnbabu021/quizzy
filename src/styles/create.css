@@ -1,8 +1,28 @@
-.game{
-    color:blue
+.p{
+    color:var(--secondary-button);
+    padding-left: 30px;
+    font-weight: 450px;
+    text-shadow: 0px 10px 20px rgba(0,0,0,0.18);
+    font-size: 32px;
+    padding-bottom: 80px;
+
 }
+
+/* .error{
+    padding-left: 30px;
+} */
+/* .game{
+    color:#3A6DCF
+} */
 .form__contents{
-    flex:0.8
+    flex:0.8;
+    margin-top: 100px;
+    /* align-self: flex-start; */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 100px;
 }
 .form__row{
     display: grid;
@@ -10,43 +30,79 @@ width: 100%;
 height: 100%;
     place-items: center;
 }
+
 .create__form{
+    padding: 20px;
+    padding-top: 30px;
+border-radius: 10px;
+padding-top: 30px;
     display: flex;
+    box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.1),0px -20px 30px -14px rgba(0,0,0,0.1);
+
+padding-bottom: 40px;
+/* box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.1); */
     flex-direction: column;
     justify-content: space-between;
     min-width: 400px;
     width: 400px;
     text-align: start;
-    gap:20px;
+    gap:40px;
+    padding-bottom: 30px;
 }
-.create__form>label{
-    color: blue;
-}
+/* .create__form>label{
+    color: #4CD282;
+} */
+
 .create__form>input{
     outline: none;
-    border: 2px solid gray;
-    border-radius: 8px;
+    border: none;
+    border-bottom: 1px solid gray;
+    /* border-radius: 8px; */
+    box-shadow: 0px 10px 30px -14px rgba(0,0,0,0.1);
+    transition: 0.5s ease-in-out;
 padding:8px;
 }
+
+.create__form>input::placeholder{
+    color: #555;
+}
+
 .create__form>input:focus{
-    border:2px solid var(--secondary-button)
+    box-shadow: 0px 20px 30px -14px rgba(0,0,0,0.1);
+    border-bottom:1px solid #3ACF91;
 }
 .submit__button{
     width:100px;
     margin-left: auto;
+    margin-top: 20px;
     outline:none;
     border:none;
     padding:8px;
     border-radius:8px;
+    background: #3ACF91;
+    color: white !important;
+    letter-spacing: 1px !important;
     cursor: pointer;
-    box-shadow:0 8px 0 var(--secondary-button);
-    background:rgba(123, 224, 105, 0.933);
+    box-shadow: 0px 20px 30px rgba(0,0,0,0.2);
+    /* box-shadow:0 8px 0 var(--secondary-button); */
+    transform: translateY(0px);
     transition: 0.2s ease-in-out;
 }
-.submit__press{
-    transform: translateY(4px);
-    box-shadow: 0 4px 0 var(--secondary-button);
+
+
+.submit__button:hover{
+transform: translateY(4px) scale(1.009);
+    box-shadow: 0px 22px 30px rgba(0,0,0,0.28);
 }
+.submit__button:active{
+    /* transform: scale(0.9); */
+    transform: translateY(4px) scale(0.9);
+    box-shadow: 0px 23px 35px rgba(0,0,0,0.21);
+}
+/* 
+.submit__press{
+
+} */
 
 
 .document__id{

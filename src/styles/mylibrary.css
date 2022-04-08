@@ -47,6 +47,10 @@ font-size: 2rem;
 }
 .library__parent{
     display: flex;
+
+    /*c!!!!!!important change if an error occours*/
+    user-select: none;
+
     /* justify-content: space-around; */
     align-items: center;
     gap:0px;
@@ -72,7 +76,6 @@ font-size: 2rem;
     cursor: pointer;
     
     border-radius: 10px;
-    text-rendering: optimizeLegibility;
     text-transform: uppercase;
     letter-spacing: 1.01px;
     /* border:2px solid #f1f1f1; */
@@ -101,6 +104,21 @@ font-size: 2rem;
 }
 
 
+.side__click{
+    color: green;
+    position: relative;
+}
+.side__click::before{
+    position: absolute;
+    top:0%;
+    content: '';
+    transition:0.5s ease-in-out;
+    z-index: 1;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--secondary-button);
+}
 
 
 .svg__cont{
@@ -117,7 +135,7 @@ font-size: 2rem;
 
 
 
-svg{
+/* svg{
     box-shadow: 2px 2px 30px 8px rgba(0,0,0,0.04);
     border-radius: 100%;
-}
+} */

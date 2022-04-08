@@ -1,6 +1,7 @@
-import { collection, doc, onSnapshot, query, where } from "firebase/firestore"
+import { applyActionCode, getAuth, sendSignInLinkToEmail } from "firebase/auth"
+import { arrayUnion, collection, doc, getDoc, getDocs, onSnapshot, query, updateDoc, where } from "firebase/firestore"
 import { useState } from "react"
-import { db } from "../constants/firebase"
+import { db, firebaseApp } from "../constants/firebase"
 
 export  const       completedCount=async(uid)=>{
     let   completed=0
@@ -27,3 +28,50 @@ if(singleUser.data().participated.length>0){
 })
 
 }
+export  const       findUserFromId=(uid)=>{
+const       q=query(collection(db,'users'),where('uid','==',uid))
+return  q
+}
+
+
+export  const   updateUserProfile=async(uid,name)=>{
+const   q=findUserFromId(uid)
+const       user=await  getDocs(q)
+    user.forEach(async(document)=>{
+        await updateDoc(doc(db,'users',document.id),{
+            name:name
+        })
+    })
+    
+
+
+
+}
+
+
+
+
+export  const   handleVerifyEmail=()=>{
+    // const   auth=getAuth()
+    // applyActionCode(auth).then((res)=>{
+    //     console.log('email verified')
+    // })
+
+ 
+
+}
+
+export  const   updateCompleted=(uid,id)=>{
+    const       userDetails=findUserFromId(uid)
+        onSnapshot(userDetails,(snaps)=>{
+snaps.forEach(async(snap)=>{
+    console.log(snap.data())
+    await   updateDoc(doc(db,'users',snap.id),{
+        completed:arrayUnion({id:id})
+    })
+})
+          
+        })
+}
+
+

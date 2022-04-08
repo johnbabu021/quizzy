@@ -12,8 +12,7 @@ export  default function    ReportId(){
 
     const   {id}=useParams()
     const   {state:{user}}=useContext(UserDetails)
-    // console.log(id)
-const       [completedDetails,setCompletedDetails]=useState([])
+    const       [completedDetails,setCompletedDetails]=useState([])
 console.log(completedDetails)
     useEffect(()=>{
         if(user){
@@ -53,18 +52,18 @@ console.log(dataConverter)
 </div>
 
 <div className="teacher__contents">
-
+{completedDetails.length!==0?
     <TableContainer component={Paper}>
         <Table sx={{minWidth:650}} aria-label="simple table">
            {completedDetails.length!==0&& <TableHead>
                 <TableRow>
                     <TableCell>participant</TableCell>
-                    <TableCell>participant</TableCell>
-                    <TableCell>participant</TableCell>
+                    <TableCell>Image</TableCell>
+                    <TableCell>Score</TableCell>
 
                 </TableRow>
             </TableHead>}
-           {completedDetails.length!==0? <TableBody>
+           <TableBody>
                {completedDetails?.map((item,index)=>{
                    return(
                        <TableRow key={index}                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                       >
@@ -76,11 +75,11 @@ console.log(dataConverter)
                        </TableRow>
                    )
                })}
-            </TableBody>:<TableBody>
-                <h1>No one has participated</h1>
-                </TableBody>}
+            </TableBody>
         </Table>
     </TableContainer>
+    :<div   className="no__one">No One has participated</div>
+}
 </div>
 </div>
 

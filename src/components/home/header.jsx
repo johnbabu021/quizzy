@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import  '../../styles/home/header/header.css'
 // import { initializeApp } from 'firebase/app';
@@ -10,6 +10,8 @@ import InputHandler from '../../hooks/InputHandler';
 import toast from 'react-hot-toast';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../constants/firebase';
+// import AlertFunc from '../loader/alerts';
+import Swal from 'sweetalert2'
 
 
 export  default     function        Header({CodeRef}){
@@ -17,6 +19,7 @@ export  default     function        Header({CodeRef}){
     const   navigate=useNavigate()
     const   [Null,setNull]=useState('')
     const   joinCode=InputHandler('')
+   
     const   {state:{user},dispatch} =useContext(UserDetails)
 document.addEventListener('click',(e)=>{
 const   details=document.querySelector('.user__data')
@@ -73,7 +76,12 @@ const   login={
 }
 
 const   home={
-    onClick:()=>navigate('/')
+    onClick:()=>{
+        navigate('/')
+        document.getElementById('home').scrollIntoView({behavior:'smooth',block:'end'})
+
+    }
+
 }   
 
 
@@ -82,9 +90,20 @@ const   home={
             <p  className='icon'    {...home}>QUIZZY</p>
 
             <div    className="icon__right">
-<p className='buttons'>For  Work</p>
-<p className='buttons'>For  Teachers</p>
-<p className='buttons'>For  Students</p>
+
+<p className='buttons' onClick={()=>{
+    navigate('/')
+    document.getElementById('teacher').scrollIntoView({behavior:'smooth',block:'end'})
+    
+    }}>For  Teachers</p>
+<p className='buttons'  onClick={()=>{
+        navigate('/')
+    document.getElementById('student').scrollIntoView({behavior:'smooth',block:'end'})
+    
+    }}>For  Students</p>
+    <p  onClick={()=>{
+        navigate('/')
+    document.getElementById('report').scrollIntoView({behavior:'smooth',block:'end'})}} className='buttons' >Reports</p>
             </div>
             <div    className="right__side">
                 <div    className='input__container'>
@@ -132,27 +151,48 @@ borderRadius:'50%',
 
 
 }}
-
+alt=""
 src={user.photoURL}/>
 {userDetails&&<div  className='user__data'>
-
-<Button onClick={()=>signOut(auth).then(()=>{
+<Button onClick={()=>navigate('/profile')}>Profile</Button>
+<Button onClick={()=>
+    {
+        Swal.fire({
+            title: 'Are you sure want to logout?',
+            showDenyButton: true,
+            // showCancelButton: true,
+            confirmButtonText: 'Yes',
+            denyButtonText: `No`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              
+signOut(auth).then(()=>{
     dispatch({type:'logout'})
     localStorage.setItem('user',null)
 }).catch((e)=>{
     console.log(e)
 })
+            } 
+            // else if (result.isDenied) {
+            //   Swal.fire('Changes are not saved', '', 'info')
+            // }
+          })
 
-}>Logout</Button>
-<Button>MyLibrary</Button>
-<Button>Reports</Button>
-<Button>Practice</Button>
+        
+
+}
+}
+>Logout</Button>
+<Button onClick={()=>navigate('/mylibrary')}>MyLibrary</Button>
+<Button onClick={()=>navigate('/reports')}>Reports</Button>
+<Button onClick={()=>navigate('/playground')}>Practice</Button>
 
 </div>
 }
-</div>:<p  {...login}
+</div>:<button  {...login}
 className="login__button"
->Login</p>}
+>Login</button>}
 {/* <Toaster    position='top-left'/> */}
 {/* <p  {...signup}>Signup</p> */}
             </div>

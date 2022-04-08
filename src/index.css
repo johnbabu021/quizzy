@@ -29,3 +29,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.swal2-popup{
+  position: fixed !important;
+  top:20vh !important;
+  display: flex !important;
+  width: 500px !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+
+.swal2-title{
+font-size: 20px !important;
+color: #777777 !important;
+
+
+}
+
+.swal2-actions{
+  margin:none !important;
+}
+
+.swal2-confirm{
+  background-color: #3ACF91 !important;
+  padding: 8px 10px  !important;
+}
+.swal2-styled{
+  border: 2px solid transparent !important;
+}
+
+.swal2-styled:focus{
+  outline: 2px solid transparent !important;
+
+}
+.swal2-styled:hover{
+  background-color: none !important;
+}
+
+
+.swal2-deny{
+  background-color: transparent !important;
+  color: #777777 !important;
+  padding: 8px 10px !important;
+  border: 2px solid transparent !important;
+}
+
+.swal2-deny:active{
+  background: none !important;
+  border: none !important;
+}
+
+.swal2-confirm:active{
+  background-color: none !important;
+  border: none !important;
+}

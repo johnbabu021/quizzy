@@ -8,9 +8,13 @@ import { UserDetails } from './context/usercontext';
 import { db } from './constants/firebase';
 import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { Toaster } from 'react-hot-toast';
-
+// import Sidebar from './components/sidebar/sidebar';
+/*
+done---useeffect 56 dispatch added--missing dependencies
+*/
 function App() {
-  const {state:{user},dispatch}=useContext(UserDetails)
+  const {state:{user,alert},dispatch}=useContext(UserDetails)
+  console.log(alert)
   useEffect(()=>{
                   async function    initialize(){
                     const auth=getAuth();
@@ -51,7 +55,7 @@ console.log('alreay a user')
                   }
               initialize()
   }
-    ,[user])
+    ,[user,dispatch])
 
 useEffect(()=>{
 const   userDetails=localStorage.getItem('user')
@@ -63,7 +67,6 @@ if(userDetails){
   return (
     <div className="App">
       <Routes>
-
       {routes.map(item=>(
         <Route  {...item} key={item.path}/>
       ))}

@@ -1,4 +1,3 @@
-import { initializeApp } from "firebase/app";
 import { arrayUnion, collection, doc, onSnapshot, query, updateDoc, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -10,6 +9,9 @@ import { db } from "../constants/firebase";
 import { UserDetails } from "../context/usercontext";
 import MajorQuiz from "./majorquiz";
 
+/*asdfsdfas
+asdfasdfadsf
+*/
 export  default function    Join(){
     const   [details,setDetails]=useState(null)
     const   {state:{user}}=useContext(UserDetails)

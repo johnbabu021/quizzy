@@ -14,8 +14,8 @@ import { useContext, useState } from 'react'
 export  default     function    TeacherContent({CodeRef}){
     let navigate=useNavigate()
 const   {state:{user}}=useContext(UserDetails)
-const    [compl,setComp]=useState(localStorage.getItem('completed'))
-const    [patci,setParti]=useState(localStorage.getItem('participated'))
+const    compl=useState(localStorage.getItem('completed'))
+const    patci=useState(localStorage.getItem('participated'))
 
     return(
 
@@ -47,7 +47,7 @@ CodeRef.current.focus()
 </header>
 <div    className='section__home'>
 <div    className="items__content">
-{patci}<hr/> new joined
+{patci}<hr/> Total joined
 </div>
 <div    className="items__content">
 {compl}<hr/>completed

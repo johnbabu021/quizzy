@@ -8,7 +8,12 @@ export  default function    InputHandler(data,additionalFunc=null,setIn=false){
         setInput(e.target.value)
         additionalFunc&&additionalFunc(e.target.value)
     }
-    
+
+//  let data={
+//         value:input,
+//         onChange:onChange,
+//         setInput:setInput
+//     }
     return{
         value:input,
         onChange:onChange,

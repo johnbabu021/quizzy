@@ -1,30 +1,73 @@
+.profile__cover{
+    width: 80%;
+    top:0px;
+    position: absolute;
+    height: 200px;
+    z-index:-2;
+    border-radius: 10px;
+    box-shadow: 2px 2px 40px 8px rgba(0,0,0,0.03);
+}
+
+
+.profile{
+    display: flex;
+}
+.teacher__sidebar{
+    font-weight: 400;
+}
+
+.profile__content{
+    flex:0.98;
+    position: relative;
+
+}
+
+.profile__head{
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    user-select: none;
+}
 .profile__parent{
     padding-top: 5em;
     display: flex;
+    position: absolute;
+    top:50px;  
+      padding-bottom: 40px;
+    left:30px;
     flex-direction: column;
     gap:2em;
 }
 .profile__container>img {
     width: 100px;
+    box-shadow: 2px 2px 40px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
     height: 100px;
 }
 .name{
     text-transform: capitalize;
     font-weight: bold;
 }
+.mail{
+    text-transform: lowercase;
+    font-weight: 600;
+    font-size: 15px;
+}
 .profile__container{
     display: flex;
+    user-select: none;
+    height: 150px;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     gap:40px;
 }
 /* .name__container{
     displ;
 } */
-.profile{
-    text-transform: capitalize;
-    font-weight: bold;
+.name__container{
+    align-self: flex-end;
 }
+
 .gray{
     color: gray;
 }
@@ -39,11 +82,60 @@
 }
 .input>input{
     outline: none;
-    width: 70%;
+    width: 310px;
     border: 2px solid #7c7c7c;
     border-radius: 10px;
+    box-shadow: 2px 2px 15px 8px rgba(0,0,0,0.04);
     padding: 8px;
 }
 .input>input:focus{
     border: 2px solid var(--secondary-button);
+}
+.alert{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:4rem;
+    color: #ff7777;
+}
+.info{
+    user-select: none;
+    font-size: 18px;
+}
+
+.input{
+    display: flex;
+    gap:10px;
+}
+
+.input>button{
+    padding: 8px;
+    cursor: pointer;
+    border: 2px solid #f1f1f1;
+    background: #fffdfd;
+    position: relative;
+    overflow: hidden;
+
+}
+.input>button:hover{
+    color: white;
+    border: 2px solid transparent;
+    z-index: 1;
+}
+
+.input>button::after{
+    position: absolute;
+    content:'';
+    transition: 0.1s ease-in-out;
+    width: 100%;
+    z-index:-2;
+    height: 100%;
+    transform: translateX(-100%);
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-button);
+}
+.input>button:hover::after{
+transform: translateX(0%);
 }

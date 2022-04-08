@@ -41,16 +41,16 @@ const   copyFunc=(code)=>{
    <div className="teacher__contents">
  { !code? <div    className="create__form">
       
-<label  htmlFor="questions">Enter the question {currentQuestion+1}</label>
-<input onChange={que.onChange}  value={que.value} id="questions" name="answers" type="text"/>
-<label htmlFor="crct" >Enter    correct answer</label>
-<input  onChange={crct.onChange}  value={crct.value}   id="crct" type='text'/>
-<label htmlFor="crct" >Enter    option1</label>
-<input  onChange={opt1.onChange}  value={opt1.value}  id="op1" type='text'/>
-<label htmlFor="crct" >Enter    option2</label>
-<input  onChange={opt2.onChange}  value={opt2.value}   id="op2" type='text'/>
-<label htmlFor="crct" >Enter    option3</label>
-<input  onChange={opt3.onChange}  value={opt3.value}  id="op3" type='text'/>
+{/* <label  htmlFor="questions">Enter the question {currentQuestion+1}</label> */}
+<input onChange={que.onChange}  value={que.value} id="questions" name="answers" placeholder={`enter the question ${currentQuestion+1}`} type="text"/>
+{/* <label htmlFor="crct" >Enter    correct answer</label> */}
+<input  onChange={crct.onChange}  value={crct.value}    placeholder="enter the correct answer"  id="crct" type='text'/>
+{/* <label htmlFor="crct" >Enter    option1</label> */}
+<input  onChange={opt1.onChange}  value={opt1.value}    placeholder="enter the option 1" id="op1" type='text'/>
+{/* <label htmlFor="crct" >Enter    option2</label> */}
+<input  onChange={opt2.onChange}  value={opt2.value}  placeholder="enter the option 2"  id="op2" type='text'/>
+{/* <label htmlFor="crct" >Enter    option3</label> */}
+<input  onChange={opt3.onChange}  value={opt3.value}  placeholder="enter the option 3" id="op3" type='text'/>
 
 <button    className="submit__button" onClick={
     (e)=>{

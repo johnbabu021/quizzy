@@ -5,5 +5,6 @@ module.exports={
     REPORTS:'/reports',
     REPORTID:'/reports/:id',
     MYLIBRARY:'/mylibrary',
-    JOIN:'/join/:id'
+    JOIN:'/join/:id',
+    PROFILE:'/profile',
 }

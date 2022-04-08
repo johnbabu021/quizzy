@@ -5,11 +5,12 @@ import  '../styles/login/home.css'
 // import Loading from "../components/loader/Loading";
 import { useContext, useState } from "react";
 import { useEffect } from "react";
-import      toast ,{Toaster} from 'react-hot-toast'
+import      toast from 'react-hot-toast'
 import { arrayUnion, doc, onSnapshot, updateDoc } from 'firebase/firestore';
 import { db } from '../constants/firebase';
-import { async } from '@firebase/util';
+// import { async } from '@firebase/util';
 import { UserDetails } from '../context/usercontext';
+import {  updateCompleted } from '../services/firebase';
 export  default   function  MajorQuiz({item:{results},id=null}){
 const       [itemLength,setItemLength]=useState(10)
 
@@ -21,7 +22,7 @@ const   notify=()=>{
     toast.error('you should enter a value')
 }
 const   [submit,setSubmit]=useState(false)
-const   [submitted,setSubmitted]=useState([])
+// const   [submitted,setSubmitted]=useState([])
 let [result,setResult]=useState([])
     const   unicodes=[{
         string:'&#039;',
@@ -95,7 +96,7 @@ catch(e){
 
 },[])
 
-
+//setResult,newItem,resultItem,results
    
 
 
@@ -141,11 +142,15 @@ setSubmit(false)
 if(results.length===1){
     setCompleted(true)
     if(id&&user){
+        updateCompleted(user?.uid,id)
+
         onSnapshot(doc(db,'created',id),async(snapDoc)=>{
             await       updateDoc(doc(db,'created',id),{
                 completed:arrayUnion({id:user.uid,score:score})
             })
         })
+
+
        
     }
 }
@@ -213,19 +218,9 @@ cont.setAttribute('data-pct',Number(score))
    cy={20}
    fill="none"
   ></circle>
-       </svg>}
+       </svg>}  
        </Button>}
-   {/* <Toaster
-    po  tion="top-right"
-    reverseOrder={false}
-    toastOptions={{
-        style:{
-            borderRadius:'2px',
-            top:'40px',
-            padding:'20px 10px'
-        }
-    }}
-   /> */}
+
     </div>
         </div>
     )

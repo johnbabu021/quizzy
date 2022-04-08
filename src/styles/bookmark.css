@@ -1,0 +1,15 @@
+.single__book{
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 40px 8px rgba(0,0,0,0.05);
+    display: grid;
+    place-items: center;
+}
+.single__book>h1{
+    color: var(--secondary-button);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    
+}

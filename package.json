@@ -19,6 +19,7 @@
     "react-router-dom": "^6.1.1",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
+    "sweetalert2": "^11.4.6",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-test-renderer": "^17.0.2"
   }
 }

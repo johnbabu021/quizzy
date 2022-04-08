@@ -1,53 +1,111 @@
 import { useNavigate } from "react-router-dom"
+import Header from "../components/home/header"
 import  '../styles/initial.css'
 export      default function    InitailFunction(){
     const   navigate=useNavigate()
     return  (
-        <div>
-<section style={{
-    minHeight:'100vh',
-    text:'white',
-    minWidth:'100vw',
-    padding:'0px',
-    margin:'0px',
-    position:'fixed',
-    top:'0',
-    display:'grid',
-    placeItems:'center'
-}}
+       <div>
+           <Header/>
+            <div  id="home"   className="sec">
+<section 
 className="initial__sec"
 >
-<div    style={{
-marginRight:'auto',
-paddingLeft:'100px',
-}}>
+
 <h1
-    style={{
-    textTransform:'uppercase',
-    color:'white',
-    fontSize:'60px'
-    }}
     className="head"
     >
-        a platform to<br></br> <span
-        style={{
-            color:'rgb(16,185,129)'
-        }}
-        >test and improve</span> your skills
+        a platform to test <br/>and improve your skills
     </h1>
-
+<p  className="home__info">Compete yourself in quizzy<br/> make yourself a better person</p>
 <button 
 onClick={()=>navigate('/dashboard')}
    className="get__started"  >get started</button>
-</div>
 
- 
+
 
 
 </section>
+<div>
+    <img src="banner.svg" alt=""/>
+    </div>
+</div>
+{/* <div    className="wave">
+    <img src="wave.svg"/>
+</div> */}
 
 
+<div  id="teacher"  className="sec">
 
-        </div>
+
+<section    className="initial__sec">
+<h1 className="head">Improve the <br/>Quality of Teaching </h1>
+<p  className="home__info">Compete yourself in quizzy<br/> make yourself a better person</p>
+<button 
+onClick={()=>navigate('/create')}
+   className="get__started"  >View plan</button>
+
+
+</section>
+<div>
+<img src="teacher.svg" alt="" />
+
+</div>
+</div>
+
+<div    className="sec">
+
+
+<section  id="student"  className="initial__sec">
+<h1 className="head">Improve the <br/>future of students </h1>
+<p  className="home__info">join events in quizzy<br/> make yourself a better person</p>
+<button 
+onClick={()=>navigate('/dashboard')}
+   className="get__started"  >get started</button>
+
+
+</section>
+<div>
+<img src="student.svg" alt="" />
+
+</div>
+</div>
+<div    className="sec">
+
+
+<section   className="initial__sec">
+<h1 className="head">Improve the <br/>Knowledge </h1>
+<p  className="home__info">Practise  in quizzy<br/> make yourself a better person</p>
+<button 
+onClick={()=>navigate('/playground')}
+   className="get__started"  >get started</button>
+
+
+</section>
+<div>
+<img src="learn.svg" alt="" />
+
+</div>
+</div>
+
+<div   id="report" className="sec">
+
+
+<section    className="initial__sec">
+<h1 className="head">Get Realtime <br/>Reports on events </h1>
+<p  className="home__info">Create and review perfomace<br/>of students</p>
+<button 
+onClick={()=>navigate('/reports')}
+   className="get__started"  >get started</button>
+
+
+</section>
+<div>
+<img src="report.svg" alt="" />
+
+</div>
+</div>
+
+
+       </div>
     )
 }
