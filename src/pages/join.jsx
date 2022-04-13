@@ -1,7 +1,7 @@
 import { arrayUnion, collection, doc, onSnapshot, query, updateDoc, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from "../components/home/header";
 import Loading from "../components/loader/Loading";
 import Sidebar from "../components/sidebar/sidebar";
@@ -28,7 +28,12 @@ const   participatedData={
         })
         const   q=query(collection(db,'users'),where('uid','==',user?.uid))
 
-const       updateQuery=onSnapshot(q,(onSnapshot)=>{
+
+        //check on any error here-----********
+// const       updateQuery=
+
+
+onSnapshot(q,(onSnapshot)=>{
     onSnapshot.forEach(async(item)=>{
         await       updateDoc(doc(db,'users',item.id),{
             participated:arrayUnion(id)
@@ -41,18 +46,18 @@ const       updateQuery=onSnapshot(q,(onSnapshot)=>{
     { 
      onSnapshot(dataField,(doc)=>{
     doc.data().completed?.map((userDocId)=>{
-             console.log(doc.data(),user.uid,userDocId.id)
+            //  console.log(doc.data(),user.uid,userDocId.id)
  if(userDocId.id===user.uid){
-     toast.error('you\'ve already joined to this game')
+   return  toast.error('you\'ve already joined to this game')
  
  }
  else{
-     setDetails(doc.data())
+   return  setDetails(doc.data())
 
  }
          })
          if(doc.data().completed.length===0){
-         setDetails(doc.data())
+      return   setDetails(doc.data())
         }
      }
     
@@ -65,7 +70,7 @@ const       updateQuery=onSnapshot(q,(onSnapshot)=>{
 
      
 
-    },[user])
+    },[user,id])
 
 
     return      (

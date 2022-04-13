@@ -1,11 +1,11 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import {  useSearchParams } from "react-router-dom";
 import Header from "../components/home/header";
 import Sidebar from "../components/sidebar/sidebar";
 import  '../styles/home/teacherContent/home.css'
 import  '../styles/create.css'
 import InputHandler from "../hooks/InputHandler";
 import { useState ,useContext} from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { addDoc, arrayUnion, collection, doc, onSnapshot, query, serverTimestamp, updateDoc, where } from "firebase/firestore";
 import { db } from "../constants/firebase";
 import { Button, Tooltip } from '@mui/material';
@@ -14,12 +14,13 @@ import  {UserDetails} from '../context/usercontext'
 
 
 export  default function    CreateForm(){
-    const   navigate=useNavigate()
+    // const   navigate=useNavigate()
 const       [searchParams]=useSearchParams()
 const   name=searchParams.get('name')
 const   number=searchParams.get('number')
 const   {state:{user}}=useContext(UserDetails)
 const [submit,setSubmit]=useState(false)
+console.log(submit)
   const     [gameElements,setGameElements]=useState([])
 let     [currentQuestion,setCurrentQuestion]=useState(0)
 const   [code,setCode]=useState(null)

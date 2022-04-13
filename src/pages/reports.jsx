@@ -23,7 +23,7 @@ useEffect(()=>{
     selectedItems.forEach(async(mappingUser)=>{
       onSnapshot(doc(db,'users',mappingUser.id),(wholeItem)=>{
         wholeItem.data().created.map(({id})=>{
-          onSnapshot(doc(db,'created',id),(createdSingle)=>{
+        return  onSnapshot(doc(db,'created',id),(createdSingle)=>{
             setCreated((data)=>[...data,{createdData:createdSingle.data(),id}])
           })
         })
@@ -74,7 +74,7 @@ useEffect(()=>{
            <div className='main__div'   >
 {
   created.map((item,index)=>(
-    <div  key={index} className='pricing pricing-palden'>
+    <div data-aos="fade-up" data-aos-duration="1000"  key={index} className='pricing pricing-palden'>
     <div className='pricing-item'>
       <div className='pricing-deco'>
         <svg className='pricing-deco-img'>

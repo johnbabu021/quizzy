@@ -11,6 +11,7 @@ import { db } from '../constants/firebase';
 // import { async } from '@firebase/util';
 import { UserDetails } from '../context/usercontext';
 import {  updateCompleted } from '../services/firebase';
+import { useCallback } from 'react';
 export  default   function  MajorQuiz({item:{results},id=null}){
 const       [itemLength,setItemLength]=useState(10)
 
@@ -74,7 +75,26 @@ return  item.incorrect_answers.map(data=>{
 
 
 
-useEffect(()=>{
+// useEffect(()=>{
+
+//--done changed useEffect check it with any error
+
+
+    //added result.length
+
+    //checked with three useEffect groups
+
+    
+
+// useEffect(()=>{
+//    const        caller=()=>{
+    
+//    }
+//    caller()
+//     //missing resultItem and newItem check them if available
+// },[])
+ const      caller=useCallback(
+     ()=>{
     setItemLength(results.length)
 
     if(resultItem&&newItem){
@@ -82,19 +102,26 @@ useEffect(()=>{
     
     
     }
- try{   if(results.length!==0){
-    setResult(item=>[...item,{id:0,option:results[0].correct_answer}])
-    for(let i=1;i<=resultItem[0].length;i++){
-        setResult(item=>[...item,{id:i,option:resultItem[0][i-1]}])
-    }
-}
-}
-catch(e){
-    console.log(e)
-}
+    try{ 
+        if(results.length!==0){
+     setResult(item=>[...item,{id:0,option:results[0].correct_answer}])
+     for(let i=1;i<=resultItem[0].length;i++){
+         setResult(item=>[...item,{id:i,option:resultItem[0][i-1]}])
+     }
+ }
+ }
+ catch(e){
+     console.log(e)
+ }
+ },[])
+ useEffect(()=>{
+     
 
+ caller()
+ 
+ 
+ },[caller])
 
-},[])
 
 //setResult,newItem,resultItem,results
    

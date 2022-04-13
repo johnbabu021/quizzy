@@ -36,7 +36,7 @@ console.log(dataConverter)
             })
 
         }
-    },[user])
+    },[user,id])
 
 
 
@@ -53,7 +53,7 @@ console.log(dataConverter)
 
 <div className="teacher__contents">
 {completedDetails.length!==0?
-    <TableContainer component={Paper}>
+    <TableContainer data-aos="zoom-in" component={Paper}>
         <Table sx={{minWidth:650}} aria-label="simple table">
            {completedDetails.length!==0&& <TableHead>
                 <TableRow>
@@ -68,7 +68,7 @@ console.log(dataConverter)
                    return(
                        <TableRow key={index}                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                       >
                 <TableCell>{item.user}</TableCell>
-                <TableCell><img src={item.photoURL}/></TableCell>
+                <TableCell><img src={item.photoURL} alt="" /></TableCell>
                 <TableCell>{item.score}</TableCell>
                 {/* <TableCell>{item.bike}</TableCell> */}
 

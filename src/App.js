@@ -8,7 +8,10 @@ import { UserDetails } from './context/usercontext';
 import { db } from './constants/firebase';
 import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { Toaster } from 'react-hot-toast';
-// import Sidebar from './components/sidebar/sidebar';
+import Aos from 'aos';
+import 'aos/dist/aos.css'; 
+Aos.init()
+// // import Sidebar from './components/sidebar/sidebar';
 /*
 done---useeffect 56 dispatch added--missing dependencies
 */
@@ -62,7 +65,7 @@ const   userDetails=localStorage.getItem('user')
 if(userDetails){
   dispatch({type:'login',user:JSON.parse(userDetails)})
 }
-},[])
+},[dispatch])
 
   return (
     <div className="App">

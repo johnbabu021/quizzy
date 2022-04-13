@@ -192,7 +192,7 @@ signOut(auth).then(()=>{
 }
 </div>:<button  {...login}
 className="login__button"
->Login</button>}
+>Join Now</button>}
 {/* <Toaster    position='top-left'/> */}
 {/* <p  {...signup}>Signup</p> */}
             </div>

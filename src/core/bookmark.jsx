@@ -16,8 +16,8 @@ if(user){
          let        book=[]
            book.push(singleSnap.data()?.bookmark)
       book?.map((item)=>{
-          item.map((singleData)=>{
-            onSnapshot(doc(db,'singles',singleData.id),(singles)=>{
+         return item.map((singleData)=>{
+           return onSnapshot(doc(db,'singles',singleData.id),(singles)=>{
                 setBookMark((book)=>[...book,singles.data()])
             })
           })

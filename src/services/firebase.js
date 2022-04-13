@@ -1,7 +1,7 @@
-import { applyActionCode, getAuth, sendSignInLinkToEmail } from "firebase/auth"
-import { arrayUnion, collection, doc, getDoc, getDocs, onSnapshot, query, updateDoc, where } from "firebase/firestore"
-import { useState } from "react"
-import { db, firebaseApp } from "../constants/firebase"
+// import { applyActionCode, getAuth, sendSignInLinkToEmail } from "firebase/auth"
+import { arrayUnion, collection, doc, getDocs, onSnapshot, query, updateDoc, where } from "firebase/firestore"
+// import { useState } from "react"
+import { db } from "../constants/firebase"
 
 export  const       completedCount=async(uid)=>{
     let   completed=0

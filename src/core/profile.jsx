@@ -1,4 +1,4 @@
-import { Button } from "@mui/material"
+// import { Button } from "@mui/material"
 import { onSnapshot } from "firebase/firestore"
 import { useContext, useEffect, useState } from "react"
 import Header from "../components/home/header"
@@ -49,7 +49,7 @@ updateUserProfile(user?.uid,profileName.value)
 
 <div    className="profile__parent">
 <div    className="profile__container">
-<img src={user?.photoURL}/>
+<img src={user?.photoURL} alt=""/>
 <div    className="name__container">
 <p  className="name">{userData?.name}</p>
 <p  className="mail gray">{user?.email}</p>

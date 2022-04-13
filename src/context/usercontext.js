@@ -14,7 +14,7 @@ export  default function    UserContext({children}){
             case 'login': return    {user:action.user}
             case    'logout':return {user:null}
             case    'alert':return   {alert:action.alert}
-
+            default :return state
         }
     }
     const   [state,dispatch]=useReducer(reducer,initialState)

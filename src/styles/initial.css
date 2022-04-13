@@ -1,4 +1,21 @@
 
+.svg__sec{
+    position: absolute;
+    top: 30%;
+    width:250px;
+    height: 200px;
+    z-index: -1;
+right:50%;
+}
+
+.svg__path{
+    transition: 0.5s ease-in-out;
+}
+.svg__path:hover{
+    fill: var(--secondary-button);
+    stroke: var(--secondary-button);
+}
+
 .sec{
     width: 99vw;
     padding: 0;
@@ -31,6 +48,7 @@ div>img{
 border:2px solid  var(--secondary-button);
 background:  var(--secondary-button);
 color:white;
+width: 200px;
 box-shadow: 0px 20px 40px -8px rgba(0,0,0,0.3);
 }
 .get__started{
@@ -39,6 +57,8 @@ box-shadow: 0px 20px 40px -8px rgba(0,0,0,0.3);
     transition:all 0.5s;
     /* color:#3ACF91; */
     position: relative;
+    display: grid;
+    place-items: center;
     letter-spacing: 4px;
     overflow: hidden;
     background: transparent;
@@ -52,21 +72,45 @@ box-shadow: 0px 20px 40px -8px rgba(0,0,0,0.3);
     outline: none;
 
 }
+.get__started::after{
+    position: absolute;
+    content:"";
+
+}
+
+.get__started:hover::after{
+    right: -5px;
+content: "\2192";
+bottom:9.5px;
+font-size: 30px;
+font-weight: 1800;
+
+}
 p.home__info{
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     letter-spacing: 1.2px;
     line-height: 27.3px;
     font-weight: 300;
-    text-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    /* text-shadow: 0px 10px 20px rgba(0,0,0,0.1); */
     /* 3ACF91 */
-    background: linear-gradient(to right, #222 0%, var(--secondary-button) 100%);
+    /* background: linear-gradient(to right, #222 0%, var(--secondary-button) 100%); */
+    color: #273240;
     -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color:transparent;
+    /* background-clip: text; */
+    /* -webkit-text-fill-color:transparent; */
 
 }
+
+
+.home__info>span{
+
+/* border-bottom: 4px solid var(--secondary-button); */
+
+}
+
+
 .head{
-    background: linear-gradient(to right, #1443BD 0%, var(--secondary-button) 100%);
+    background: linear-gradient(to right, #273240 40%, var(--secondary-button) 100%);
 	-webkit-background-clip: text;
     background-clip: text;
     font-size: calc(23.75px + 11.25 * ((100vw - 480px) / 800));

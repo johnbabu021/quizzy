@@ -5,7 +5,10 @@ import  '../styles/create.css'
 import InputHandler from "../hooks/InputHandler";
 import toast from 'react-hot-toast'
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+/*
+
+*/
+// import { useState } from "react";
 export      default     function    Create(){
     const   navigate=useNavigate()
     const       name=InputHandler('')

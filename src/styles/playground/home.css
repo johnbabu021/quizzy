@@ -1,5 +1,6 @@
 .playground__container{
     display: flex;
+    padding-left: 20px;
     justify-content: space-between;
     flex-wrap: wrap;
     min-height: 100vh;
@@ -9,33 +10,156 @@
 
 }
 .item_container{
-    width: 300px;
-    height: 150px;
-    /* background:linear-gradient(rgba(192, 228, 241, 0.486),rgba(98, 212, 247, 0.623)); */
-    /* background-color: white; */
-    text-transform: uppercase;
-    color: white;
-    border-radius: 10px;
-    padding: 0 30px;
-box-shadow: 0 8px 0 var(--playground-background--color) ,0 4px 10px rgba(0,0,0,0.5);
-    display: grid;
-    cursor: pointer;
-    transition: 0.2s    ease-in-out;
-    place-items: center;
-    border: 1px solid   var(--playground--color);
-    background: var(--playground--color);
-}
-.item_container:hover{
-    transform: scale(1.03);
-    /* box-shadow: 0 2px 0 var(--btn--color);
-    transform: translateY(4px); */
-    
+ width: 300px; 
+ height: 400px;
+ display: grid;
+ padding-left: 20px;
+ position: relative;
+ font-size: 20px;
+ /* display: flex; */
+ /* flex-direction: column; */
+ place-items: center;
+ border-radius: 20px;
+ background-color: #c7c7c736;
+ transition: 0.2s ease-in-out;
+ box-shadow: 0px 50px 80px -14px rgba(0,0,0,0.08);
 
 }
-.item_container:active{
-    border:1px  solid   var(--playground--color);
-    box-shadow: 0 2px 0 var(--playground-background--color),0 4px 14px rgba(0,0,0,0.5);
-    transform: translateY(4px);
+.item__name{
+    font-weight: 350;
+
+}
+
+.question__settings{
+padding-bottom: 40px;
+font-weight: 200;
+    
+}
+.question__count__cont{
+    display: flex;
+    user-select: none;
+    margin-bottom: 20px;
+    justify-content: space-between;
+border-radius: 20px;
+    background-color: #c7c7c769;
+}
+.que__pulse{
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    /* padding: 10px; */
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-weight: 500;
+    color: var(--secondary-button);
+    display: grid;
+    place-items: center;
+    background-color: white;
+}
+.que__count{
+    display: grid;
+place-items: center;
+}
+.que__pulse:hover{
+    color: white;
+    background-color: var(--secondary-button);
+}
+.item_container:hover{
+    transform: translateY(-2px);
+    box-shadow: 0px 35px 37px -25px rgba(0,0,0,0.2);
+}
+.btn__pra{
+    display: flex !important;
+    position: absolute;
+    bottom: 20px;
+    gap:10px;
+    /* justify-content: space-between; */
+    /* flex-direction: column; */
+}
+
+.pra__btn{
+    /* position: absolute; */
+    /* display: flex; */
+    cursor: pointer;
+/* bottom: 20px; */
+background: var(--secondary-button);
+border: none;
+box-shadow:0px 17px 32px 1px rgba(0,0,0,0.15)    ;
+
+outline: none;
+opacity:0.7;
+width: 200px;
+height: 50px;
+color: white;
+padding: 4px 10px;
+/* transition-property: box-shadow; */
+transition:transform 2ms ease-in-out;
+border-radius: 10px;
+/* left:40px; */
+    /* align-self: flex-end; */
+}
+.like__btn>.MuiSvgIcon-root{
+font-size: 20px !important;
+}
+
+.like__btn{
+    background-color: rgba(192, 192, 192, 0.8);
+    border: none;
+    opacity: 0.7;
+    border-radius: 50%;
+    outline: none;
+    display: grid;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    place-items: center;
+    width: 50px;
+}
+.like__btn:hover{
+    /* background-color: var(--secondary-button); */
+    color: var(--secondary-button);
+    box-shadow: 0px 8px 30px rgba(0,0,0,0.2);
+}
+.like__btn:active{
+    box-shadow: inset 2px 3px 10px rgb(255, 255, 255),inset -1px -2px 10px rgba(0,0,0,0.4),-2px -4px 20px rgba(0,0,0,0.3);
+}
+.like__btn:focus>.MuiSvgIcon-root{  
+    fill: var(--secondary-button);
+}
+.like__btn:focus{
+    border: 2px solid var(--secondary-button);
+}
+
+.pra__btn:hover{
+    opacity: 0.9;
+    transform: translateY(-4px) scale(1.02);
+    /* transform: scale(1.02); */
+    box-shadow: 0px 17px 32px 1px rgba(0,0,0,0.23);
+
+
+}
+
+
+.pra__btn:active{
+    transform:translateY(10px);
+}
+
+
+.pra__btn::after{
+right: -20px;
+opacity: 0;
+padding-left: 5px;
+transition: 0.4s ease-in-out;
+top:50%;
+content: "";
+
+}
+.pra__btn:hover::after{
+    opacity: 1;
+    /* transform: translateX(-20px); */
+    bottom: 5px;
+    content: "\2192";
+    font-size: 20px;
+    font-weight: 1200;
 }
 
 @media(max-width:760px){

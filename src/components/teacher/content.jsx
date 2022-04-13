@@ -4,6 +4,7 @@ import Sidebar from '../sidebar/sidebar'
 import { useNavigate } from 'react-router-dom'
 import { UserDetails } from '../../context/usercontext'
 import { useContext, useState } from 'react'
+// import Aos from 'aos'
 
 // import InputHandler from '../../hooks/InputHandler'
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -12,6 +13,9 @@ import { useContext, useState } from 'react'
 // import { Tooltip } from 'antd';
 
 export  default     function    TeacherContent({CodeRef}){
+    // if(typeof window==="Object"){
+    //     document.querySelector('.lets__head').style.fontWeight="bold"
+    // }
     let navigate=useNavigate()
 const   {state:{user}}=useContext(UserDetails)
 const    compl=useState(localStorage.getItem('completed'))
@@ -19,7 +23,7 @@ const    patci=useState(localStorage.getItem('participated'))
 
     return(
 
-        <div    className="teacher__component">
+        <div   className="teacher__component">
             <div    className="teacher__sidebar">
             <Sidebar/>
 
@@ -27,10 +31,22 @@ const    patci=useState(localStorage.getItem('participated'))
 
             
 
-            <div    className='teacher__contents'>
+            <div      className='teacher__contents'>
 <div    className='div__home'>
-    <h1>Hey {user?.displayName} here is your dashboard</h1>
-<header className='header__home'>
+    {/* <h1>Hey {user?.displayName} here is your dashboard</h1> */}
+    <div className='dash__banner'   >
+        <img src="Saly-1.svg"/>
+        {/* <img src="Saly-2.svg"/> */}
+        {/* 
+        <img src="Saly-16.svg"/> */}
+        <h1 className='lets__head'>Let's find Everything
+            <br></br>
+Perfect for you
+        </h1>
+
+        </div>
+<header className='header__home'  data-aos="fade-up" >
+  
 
 <button className="game__btn" onClick={()=>{
     navigate('/create')
@@ -45,7 +61,7 @@ CodeRef.current.focus()
 }
     }>Join a game</button>
 </header>
-<div    className='section__home'>
+<div   data-aos="fade-up"  className='section__home'>
 <div    className="items__content">
 {patci}<hr/> Total joined
 </div>
@@ -58,7 +74,7 @@ CodeRef.current.focus()
 </div>
 
 <h1>Popular games</h1>
-<div    className='section__home'>
+<div  data-aos="fade-up"  className='section__home'>
 <div    className="items__content">
 data
 </div>
@@ -77,7 +93,7 @@ data
 
 
 <h1>your Popular games</h1>
-<div    className='section__home'>
+<div   data-aos="fade-up"  className='section__home'>
 <div    className="items__content">
 data
 </div>
