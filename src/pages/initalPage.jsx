@@ -57,7 +57,7 @@ onClick={()=>navigate('/dashboard')}
       backgroundSize:"contain",
       backgroundClip:'padding-box',
       backgroundPosition:"center",
-      backgroundImage:`url('http://localhost:3000/new.svg')`
+      backgroundImage:`url('https://quizzy-flax.vercel.app/new.svg')`
    }
 }>
 {/* <img src="teacher.svg" alt="" /> */}
@@ -79,7 +79,7 @@ onClick={()=>navigate('/dashboard')}
       backgroundOrigin:'content-box',
       backgroundSize:"contain",
       backgroundPosition:"center",
-      backgroundImage:`url('http://localhost:3000/teacher.png')`
+      backgroundImage:`url('https://quizzy-flax.vercel.app/teacher.png')`
    }
 }>
 {/* <img src="teacher.svg" alt="" /> */}
@@ -122,7 +122,7 @@ onClick={()=>navigate('/dashboard')}
 //       backgroundOrigin:'content-box',
 //       backgroundSize:"contain",
 //       backgroundPosition:"center",
-//       backgroundImage:`url('http://localhost:3000/student.svg')`
+//       backgroundImage:`url('https://quizzy-flax.vercel.app/student.svg')`
 //    }
 // }
 
@@ -211,7 +211,7 @@ onClick={()=>navigate('/reports')}
       backgroundOrigin:'content-box',
       backgroundSize:"contain",
       backgroundPosition:"center",
-      backgroundImage:`url('http://localhost:3000/reports.png')`
+      backgroundImage:`url('https://quizzy-flax.vercel.app/reports.png')`
    }
 }>
 {/* <img src="teacher.svg" alt="" /> */}
