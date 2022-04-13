@@ -35,7 +35,7 @@ const    patci=useState(localStorage.getItem('participated'))
 <div    className='div__home'>
     {/* <h1>Hey {user?.displayName} here is your dashboard</h1> */}
     <div className='dash__banner'   >
-        <img src="Saly-1.svg"/>
+        <img src="Saly-1.png"/>
         {/* <img src="Saly-2.svg"/> */}
         {/* 
         <img src="Saly-16.svg"/> */}

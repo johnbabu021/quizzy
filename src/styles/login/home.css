@@ -4,7 +4,7 @@
     /* place-items:center; */
     font-family: Nunito Sans, sans-serif;
     /* background-color: aquamarine; */
-    background-image:url(/public/background.svg) ;
+    /* background-image:url(/public/background.svg) ; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -79,7 +79,7 @@ font-size: 15px;
 
 @media(max-width:700px){
     .login{
-        background-image: url('/public/minback.svg');
+        /* background-image: url('/public/minback.svg'); */
         }   
         .login_child{
             top:20%;
