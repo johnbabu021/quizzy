@@ -8427,6 +8427,11 @@
   dependencies:
     "goober" "^2.1.1"
 
+"react-image-file-resizer@^0.4.7":
+  "integrity" "sha512-Dak7Ecrd6WEV5LjqoRYFI49ASn7eB1VTlrw6dri9HeIMS6aJang4nli6q5xeckEMY+7QwgqgWqAQD5tgkm4bJg=="
+  "resolved" "https://registry.npmjs.org/react-image-file-resizer/-/react-image-file-resizer-0.4.7.tgz"
+  "version" "0.4.7"
+
 "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", "react-is@^17.0.1", "react-is@^17.0.2", "react-is@>= 16.8.0":
   "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
