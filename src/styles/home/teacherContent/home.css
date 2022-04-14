@@ -365,7 +365,7 @@ top:30%;
 
   @media(max-width:1480px){
       .header__home{
-          flex-direction: column;
+          /* flex-direction: column; */
           gap:80px;
       }
       .section__home{
@@ -375,4 +375,17 @@ top:30%;
       .items__content{
           max-width: 250px;
       }
+  }
+
+  @media(max-width:750px){
+    .header__home{
+        flex-direction: column;
+        gap:80px;
+    }
+      .teacher__contents{
+          padding-top: 80px;
+      }
+    .dash__banner>img{
+        display: none;
+    }
   }

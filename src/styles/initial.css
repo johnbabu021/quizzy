@@ -8,13 +8,15 @@
 right:50%;
 }
 
-.svg__path{
+/* .svg__path{
     transition: 0.5s ease-in-out;
 }
 .svg__path:hover{
     fill: var(--secondary-button);
     stroke: var(--secondary-button);
-}
+} */
+
+
 
 .sec{
     width: 99vw;
@@ -150,4 +152,127 @@ p.home__info{
     /* background-image:url('/public/wave.svg'); */
     bottom: 0px;
 
+}
+.sh-icon-bg{
+    width: 150px;
+    height: 150px;
+}
+
+.sh-icon-bg path{
+    transition: fill 2s ease !important;
+    /* fill: #f8f8f8; */
+
+}
+.sh-icon-bg:hover path{
+    cursor: pointer;
+    /* background-color: rgba(0,0,0,0.0.2); */
+    fill: rgba(123, 123, 123, 0.261);
+}
+.svg__parent{
+    display: grid;
+    grid-template-columns: auto auto ;
+    align-content: center;
+    justify-content: center;
+    row-gap: 120px;
+    column-gap: 150px;
+   
+}
+
+.svg__parent>div{
+    position: relative;
+    display: grid;
+    place-items: center;
+    
+}
+.as{
+    position: absolute;
+top:-20px;
+left: -20px;
+color: var(--secondary-button);
+background-color: white;
+border-radius: 50%;
+cursor: pointer;
+width: 50px;
+display: grid;
+place-items: center;
+height: 50px;
+border-right: 1px solid var(--secondary-button);
+border-left: 1px solid var(--btn--color);
+border-bottom: 1px solid var(--grey);
+border-top: 1px solid #2978ff;
+box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+transition: 0.4s ease-in-out;
+}
+
+.as:hover{
+    transform: rotate(30deg) scale(0.9);
+}
+.contents{
+    position: absolute;
+    max-width: 100px;
+
+}
+.contents:hover + .sh-icon-bg>path{
+    fill: rgba(123, 123, 123, 0.261);
+}
+.contents:hover ~ .icon__text{
+    color: black;
+}
+
+.icon__text{
+    transition: 0.5s ease;
+    color: var(--secondary-button);
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 900;
+}
+
+
+
+.items__end__svg{
+    grid-column: 1/3;
+}
+
+
+
+
+
+@media(max-width:760px){
+    .initial__sec{
+        padding-left: 40px;
+    }
+    #home{
+        width: 97vw;
+    }
+    .sec{
+        flex-direction: column;
+gap:40px;
+        justify-content: space-around;
+        align-items: center;
+    width: 97vw !important;
+        height: 160vh;
+    }
+    .bg__image{
+        width: 400px !important;
+        height: 400px !important;
+    }
+    .svg__parent{
+        row-gap: 0;
+        column-gap: 0;
+    }
+}
+
+@media(max-width:420px){
+    html{
+        overflow-x: hidden;
+    }
+    .svg__parent{
+                grid-template-columns: auto;
+
+    }
+    .bg__image{
+        width: 300px !important;
+        height: 300px !important;
+    }
 }

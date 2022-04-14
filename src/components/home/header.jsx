@@ -20,7 +20,8 @@ export  default     function        Header({CodeRef}){
     const   [Null,setNull]=useState('')
     const   joinCode=InputHandler('')
    
-    const   {state:{user},dispatch} =useContext(UserDetails)
+    const   {state:{user,pop},dispatch} =useContext(UserDetails)
+    // console.log(pop)
 document.addEventListener('click',(e)=>{
 const   details=document.querySelector('.user__data')
 const   parentDiv=document.querySelector('.user__image__container')
@@ -87,6 +88,17 @@ const   home={
 
     return(
         <div    className="header">
+            <div    className='hamburg'     onClick={(e)=>{
+                // console.log(pop)
+    dispatch({type:"ham-pop",pop:true})
+    e.target.parentNode.children[0].classList.toggle('hamburg__click')
+    // e.target.querySelector("::before").style.rotate="-45deg"
+}
+    }>
+<div    className='hamburg__component'  >
+
+</div>
+</div>
             <p  className='icon'    {...home}>QUIZZY</p>
 
             <div    className="icon__right">
@@ -195,6 +207,8 @@ className="login__button"
 >Join Now</button>}
 {/* <Toaster    position='top-left'/> */}
 {/* <p  {...signup}>Signup</p> */}
+
+
             </div>
         </div>
     )

@@ -6,7 +6,8 @@ export  const   UserDetails=createContext(null)
 export  default function    UserContext({children}){
     const   initialState={
         user:null,
-        alert:'adsf'             
+        alert:'adsf',
+        pop:false         
     
     }
     const   reducer=(state,action)=>{
@@ -14,6 +15,7 @@ export  default function    UserContext({children}){
             case 'login': return    {user:action.user}
             case    'logout':return {user:null}
             case    'alert':return   {alert:action.alert}
+            case    'ham-pop':return    {pop:action.pop}
             default :return state
         }
     }
