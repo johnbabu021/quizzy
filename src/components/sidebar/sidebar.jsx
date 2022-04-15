@@ -14,13 +14,16 @@ window.addEventListener('resize',()=>{
     return(
         <div    className="main__sidebar">
            {
-               sidebar.map(({name,Icon,direct},sidebarNavigateIndex)=>(<p   
+               sidebar.map(({name,Icon,direct},sidebarNavigateIndex)=>(
+               <p   
                 onClick={()=>{
                     dispatch({type:'sidebar',click:name})
                navigate(`${direct}`)
                    
                 }}  
-                 key={sidebarNavigateIndex} className={click===name?'border__click':'border__normal'}>{Icon&&<Icon/>}{name}</p>))
+                 key={sidebarNavigateIndex} 
+                 className={click===name?'border__click':'border__normal'}
+                 >{Icon&&<Icon/>}{name}</p>))
            }
         </div>
     )
