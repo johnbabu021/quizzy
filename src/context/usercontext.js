@@ -7,16 +7,21 @@ export  default function    UserContext({children}){
     const   initialState={
         user:null,
         alert:'adsf',
-        pop:false         
+        pop:false   ,
+        click:'Dashboard'      
     
     }
     const   reducer=(state,action)=>{
         switch(action.type){
-            case 'login': return    {user:action.user}
-            case    'logout':return {user:null}
-            case    'alert':return   {alert:action.alert}
-            case    'ham-pop':return    {pop:action.pop}
+            case 'login': return    {...state,user:action.user}
+            case    'logout':return {...state,user:null}
+            case    'alert':return   {...state,alert:action.alert}
+            case    'ham-pop':
+            // console.log(state.pop)    
+            return    {...state,pop:action.pop}
+            case 'sidebar':return   {...state,click:action.click}
             default :return state
+            case    'innerWidth':return     {...state,width:action.width}
         }
     }
     const   [state,dispatch]=useReducer(reducer,initialState)

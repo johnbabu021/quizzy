@@ -21,6 +21,13 @@ export  default     function        Header({CodeRef}){
     const   joinCode=InputHandler('')
    
     const   {state:{user,pop},dispatch} =useContext(UserDetails)
+//   if(typeof window==="Object"){
+
+//     const   hamBurg=document.querySelector('.hamburg')
+//     if(pop){
+//         hamBurg.classList.remove('hamburg__click')}
+//   }
+
     // console.log(pop)
 document.addEventListener('click',(e)=>{
 const   details=document.querySelector('.user__data')
@@ -90,18 +97,19 @@ const   home={
         <div    className="header">
             <div    className='hamburg'     onClick={(e)=>{
                 // console.log(pop)
-    dispatch({type:"ham-pop",pop:true})
+    dispatch({type:"ham-pop",pop:!pop
+})
     e.target.parentNode.children[0].classList.toggle('hamburg__click')
     // e.target.querySelector("::before").style.rotate="-45deg"
 }
     }>
-<div    className='hamburg__component'  >
+<div    className='hamburg__component'>
 
 </div>
 </div>
             <p  className='icon'    {...home}>QUIZZY</p>
 
-            <div    className="icon__right">
+            {/* <div    className="icon__right">
 
 <p className='buttons' onClick={()=>{
     navigate('/')
@@ -116,7 +124,7 @@ const   home={
     <p  onClick={()=>{
         navigate('/')
     document.getElementById('report').scrollIntoView({behavior:'smooth',block:'end'})}} className='buttons' >Reports</p>
-            </div>
+            </div> */}
             <div    className="right__side">
                 <div    className='input__container'>
                 <input  ref={CodeRef} value={joinCode.value}   onChange={joinCode.onChange}  className='input__btn'  placeholder='Enter  a code' />

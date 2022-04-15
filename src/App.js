@@ -10,14 +10,15 @@ import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { Toaster } from 'react-hot-toast';
 import Aos from 'aos';
 import 'aos/dist/aos.css'; 
+import MiniHeader from './components/home/miniHeader';
 Aos.init()
 // // import Sidebar from './components/sidebar/sidebar';
 /*
 done---useeffect 56 dispatch added--missing dependencies
 */
 function App() {
-  const {state:{user,alert},dispatch}=useContext(UserDetails)
-  console.log(alert)
+  const {state:{user,pop},dispatch}=useContext(UserDetails)
+  // console.log(alert)
   useEffect(()=>{
                   async function    initialize(){
                     const auth=getAuth();
@@ -29,11 +30,11 @@ function App() {
                         
                       }
                       else{
-                        console.log('asdf')
+                        // console.log('asdf')
                       }
                     })
                   if(user){
-                    console.log(user)
+                    // console.log(user)
                     const   querySnapShot=await getDocs(collection(db,"users"))
                     querySnapShot.forEach(async(doc)=>{
                       if(doc.data().email===user.email){
@@ -41,13 +42,13 @@ console.log('alreay a user')
                       }
                       else{
                       try{
-                        const docRef=await    addDoc(collection(db,"users"),{
+                       await    addDoc(collection(db,"users"),{
                           name:user.displayName,
                           email:user.email,
                           image:user.photoURL,
                           uid:user.uid
                         })
-                        console.log('docRef is',docRef.id)
+                        // console.log('docRef is',docRef.id)
                       }
                       catch(e){
                         console.log(e)
@@ -69,6 +70,9 @@ if(userDetails){
 
   return (
     <div className="App">
+      {
+        pop&&<MiniHeader/>
+      }
       <Routes>
       {routes.map(item=>(
         <Route  {...item} key={item.path}/>
