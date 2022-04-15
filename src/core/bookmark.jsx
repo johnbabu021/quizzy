@@ -42,6 +42,7 @@ if(user){
 
 return(      <div className="single__book" key={index}>
     <h1>{item.name}</h1>
+    <button className="book__btn">Get it</button>
     </div>
                        )
                  

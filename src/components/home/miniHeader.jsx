@@ -85,7 +85,7 @@ dispatch({type:'ham-pop',pop:false})
 
 <div    className="header__des__content">
     <img alt="" src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/images/29-09-2021/company.svg"/>
-    <h3 className="header__dtls">Programs</h3>
+    <h3 className="header__dtls">Company</h3>
 <p>about us</p>
 <p>details</p>
   {/* <p>Contact US</p> */}
@@ -94,7 +94,7 @@ dispatch({type:'ham-pop',pop:false})
 
 <div    className="header__des__content">
 <img alt="" src="https://s3.ap-south-1.amazonaws.com/talrop.com-react-assets-bucket/assets/images/29-09-2021/community.svg"/>
-<h3 className="header__dtls">Programs</h3>
+<h3 className="header__dtls">Buisness</h3>
 <p>Pricing</p>
 <p>contact</p>
 

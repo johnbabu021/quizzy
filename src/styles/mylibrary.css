@@ -139,3 +139,20 @@ font-size: 2rem;
     box-shadow: 2px 2px 30px 8px rgba(0,0,0,0.04);
     border-radius: 100%;
 } */
+
+
+.book__btn{
+    background-color: var(--secondary-button);
+    color:white;
+    border-radius: 4px;
+    transition: 0.4s ease-in;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+.book__btn:hover{
+    transform: translateY(-3px);
+    box-sizing: 0px 4px 20px rgba(0,0,0,0.23);
+}

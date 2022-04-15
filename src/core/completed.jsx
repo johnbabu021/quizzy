@@ -47,7 +47,7 @@ console.log(quiz)
 
 return(      <div className="single__book" key={index}>
     <h1>{item.name}</h1>
-    {/* <button className="compl__btn">view</button> */}
+    <button className="book__btn">view</button>
     </div>
                        )
                  
