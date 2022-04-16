@@ -18,6 +18,6 @@ export  const       minisideBar=[
     {name:'bookmark'},
     {name:'completed'},
     // {name:'status'},
-    {name:'participated'},
+    // {name:'participated'},
     // {name:'class'}
 ]

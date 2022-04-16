@@ -23,7 +23,7 @@ className="initial__sec"
 
 <h1
 data-aos="fade-left"
-data-aos-duration="1000"
+data-aos-duration="100"
     className="head"
     >
         a complete digital
@@ -45,7 +45,7 @@ onClick={()=>navigate('/dashboard')}
 
 
 </section>
-<div data-aos="fade-right" data-aos-duration="1000">
+<div data-aos="fade-right" data-aos-duration="100">
 <div className="bg__image"  style={
    {
       // paddingRight:"50px",
@@ -79,10 +79,10 @@ onClick={()=>navigate('/create')}
 
 
 </section>
-<div className="bg__image" data-aos="fade-up" data-aos-duration="1000" style={
+<div className="bg__image" data-aos="fade-up" data-aos-duration="100" style={
    {
-      width:'800px',
-      height:'800px',
+      width:'600px',
+      height:'600px',
       backgroundRepeat:'no-repeat',
       // backgroundAttachment:'fixed',
       backgroundOrigin:'content-box',
@@ -99,10 +99,10 @@ onClick={()=>navigate('/create')}
 
 </div>
 
-<div    className="sec">
+<div    className="sec  height__svg">
 
 
-<section data-aos="zoom-in"   data-aos-duration="1000"  id="student"  className="initial__sec">
+<section data-aos="zoom-in"   data-aos-duration="100"  id="student"  className="initial__sec ">
 <h1 className="head">Our Process<br/> </h1>
 <p  className="home__info">join events in quizzy<br/> make yourself a better person</p>
 <button 
@@ -116,7 +116,7 @@ onClick={()=>navigate('/dashboard')}
 
 
 
-<div  className="svg__parent bg__image" data-aos="zoom-in" data-aos-duration="1000">
+<div  className="svg__parent  svg__containers" data-aos="zoom-in" data-aos-duration="100">
 
 
 
@@ -278,8 +278,8 @@ onClick={()=>navigate('/reports')}
 <div  data-aos="zoom-in">
 <div className="bg__image"  style={
    {
-      width:'800px',
-      height:'800px',
+      width:'600px',
+      height:'600px',
       backgroundRepeat:'no-repeat',
       // backgroundAttachment:'fixed',
       backgroundOrigin:'content-box',

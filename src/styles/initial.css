@@ -244,16 +244,21 @@ transition: 0.4s ease-in-out;
     }
     #home{
         width: 97vw;
+        padding-top: 80px;
+
     }
+   
     .sec{
         flex-direction: column;
-gap:40px;
-        justify-content: space-around;
+/* gap:40px; */
+justify-content: space-around;
+        /* justify-content: space-around; */
         align-items: center;
     width: 97vw !important;
-        height: 160vh;
+        /* height: 160vh; */
     }
     .bg__image{
+        overflow: hidden;
         width: 400px !important;
         height: 400px !important;
     }
@@ -268,11 +273,19 @@ gap:40px;
         overflow-x: hidden;
     }
     .svg__parent{
+        /* padding: 40px 0; */
                 grid-template-columns: auto;
 
     }
+    
     .bg__image{
         width: 300px !important;
         height: 300px !important;
+    }
+    .svg__containers{
+        height: 140vh !important;
+    }
+    .height__svg{
+        height: auto;
     }
 }

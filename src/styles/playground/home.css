@@ -167,5 +167,6 @@ content: "";
 @media(max-width:960px){
     .playground__container{
         justify-content: center;
+        padding: 0;
     }
 }

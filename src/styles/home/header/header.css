@@ -45,6 +45,7 @@
 
 }
 .icon{
+    padding-left: 25px;
     cursor: pointer;
     font-weight: bolder;
 }
@@ -80,6 +81,8 @@
 }
 .hamburg{
     /* display: block; */
+    /* display:grid;
+    place-items: center; */
     position: fixed;
     top:5px;
     left: 5px;
@@ -120,7 +123,7 @@ background-color: transparent !important;
       width: 15px;
       position: relative;
       height: 4px;
-  position: fixed;
+  /* position: fixed; */
   top:35px;
   left: 25px;
   transition: 0.2s ease-in-out;
@@ -381,7 +384,8 @@ transition: 0.5s ease-in-out;
     }
     .header{
      padding-left: 10px;
-        justify-content: center;
+     /* max-width: 90vw; */
+        justify-content: space-around;
         gap:40px;
     }
     /* .right__side{

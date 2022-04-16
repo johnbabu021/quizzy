@@ -29,7 +29,7 @@ if(user){
     },[user])
 
     return(
-        <div    style={{
+        <div   className="division" style={{
             display:'flex',
             gap:'2em',
             paddingTop:'2em',
