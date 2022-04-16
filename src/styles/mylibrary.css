@@ -50,12 +50,18 @@ font-size: 2rem;
 
     /*c!!!!!!important change if an error occours*/
     user-select: none;
-
+position: relative;
     /* justify-content: space-around; */
-    align-items: center;
+    /* align-content: center; */
     gap:0px;
     width: 100%;
-    height: 80vh;
+    /* font-weight: calc(100vw-800px); */
+    font-size: calc(8.75px + 8.25 * ((100vw - 480px) / 800));
+/* font-weight: 1200; */
+/* overflow: hidden; */
+height: 80vh;
+    min-height: 80vh;
+    max-width: 99vw;
     box-shadow: 2px 2px 50px 8px rgba(0,0,0,0.06);
     background-color: white;
     border-radius: 10px;
@@ -63,7 +69,10 @@ font-size: 2rem;
 .lib__sidebar{
     flex:0.3;
     padding-top: 40px;
+    /* position: absolute; */
+    left:0;
     height: 100%;
+    align-self: flex-start;
     gap: 40px;
     display: flex;
     flex-direction: column;
@@ -125,7 +134,10 @@ font-size: 2rem;
      /* display: grid; */
      flex:0.7;
      width: 100%;
+     /* height: 70%; */
+     overflow: auto;
      display: flex;
+     align-content: center;
      justify-content: center;
      height: 100%;
      padding: 50px;
@@ -133,6 +145,12 @@ font-size: 2rem;
     /* place-items: center; */
 }
 
+.svg__cont>div{
+    /* padding-top: 1200px; */
+/* padding-bottom: 1080px; */
+    align-items: center;
+    justify-content: center;
+}
 
 
 /* svg{

@@ -40,7 +40,7 @@ if(user){
               bookMark.length!==0&&
                 bookMark?.map((item,index)=>{
 
-return(      <div className="single__book" key={index}>
+return(      <div  data-aos="fade-up"  className="single__book" key={index}>
     <h1>{item.name}</h1>
     <button className="book__btn">Get it</button>
     </div>

@@ -12,6 +12,7 @@
 .item_container{
  width: 300px; 
  height: 400px;
+ max-width: 90vw;
  display: grid;
  padding-left: 20px;
  position: relative;
@@ -81,6 +82,7 @@ place-items: center;
     /* position: absolute; */
     /* display: flex; */
     cursor: pointer;
+    max-width: 80vw;
 /* bottom: 20px; */
 background: var(--secondary-button);
 border: none;
@@ -162,7 +164,8 @@ content: "";
     font-weight: 1200;
 }
 
-@media(max-width:760px){
-    .item_container{
+@media(max-width:960px){
+    .playground__container{
+        justify-content: center;
     }
 }

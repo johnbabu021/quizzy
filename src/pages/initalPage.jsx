@@ -123,7 +123,7 @@ onClick={()=>navigate('/dashboard')}
 
 <div>
 <p className="as">1</p>
-<img src="Inspire.svg" className="contents">
+<img src="Inspire.svg" alt="" className="contents">
 </img>
 <svg   class="sh-icon-bg sh-type-1 page_speed_1926148674">
 
@@ -147,7 +147,7 @@ values="M123.4,68.4c-4.4,60.9-40.8,45.5-74.4,44.4c-33.7-1.2-47.7-13-47.7-44.4S30
 
    <div>
 <p className="as">2</p>
-<img src="Grow.svg" className="contents">
+<img src="Grow.svg" alt="" className="contents">
 </img>
 <svg   class="sh-icon-bg sh-type-1 page_speed_1926148674">
 
@@ -170,7 +170,7 @@ values="M123.4,68.4c-4.4,60.9-40.8,45.5-74.4,44.4c-33.7-1.2-47.7-13-47.7-44.4S30
 
    <div>
 <p className="as">3</p>
-<img src="lap.svg" className="contents">
+<img src="lap.svg" alt="" className="contents">
 </img>
 <svg   class="sh-icon-bg sh-type-1 page_speed_1926148674">
 
@@ -191,7 +191,7 @@ values="M123.4,68.4c-4.4,60.9-40.8,45.5-74.4,44.4c-33.7-1.2-47.7-13-47.7-44.4S30
 
    <div  className="">
 <p className="as">4</p>
-<img src="Grow.svg" className="contents">
+<img src="Grow.svg" alt="" className="contents">
 </img>
 <svg   class="sh-icon-bg sh-type-1 page_speed_1926148674">
 

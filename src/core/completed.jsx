@@ -37,7 +37,9 @@ console.log(quiz)
             display:'flex',
             gap:'2em',
             paddingTop:'2em',
-            flexWrap:'wrap'
+            flexWrap:'wrap',
+            // maxHeight:'10vh'
+            // marginBottom:"80rem"
 }}>
             
 
@@ -45,7 +47,7 @@ console.log(quiz)
               quiz.length!==0&&
                 quiz?.map((item,index)=>{
 
-return(      <div className="single__book" key={index}>
+return(      <div   className="single__book" key={index}>
     <h1>{item.name}</h1>
     <button className="book__btn">view</button>
     </div>

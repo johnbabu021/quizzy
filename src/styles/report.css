@@ -168,3 +168,10 @@ gap:40px;
   .pricing-palden .pricing-item--featured .pricing-deco {
     padding: 5em 0 8.885em 0;
   }
+
+  @media (max-width:1160px){
+    .main__div{
+      justify-content: center;
+
+    }
+  }

@@ -13,7 +13,7 @@
     min-height: 80px;
     user-select: none;
     letter-spacing: 1.2px;
-    backdrop-filter: blur(500px);
+    backdrop-filter: blur(50000px);
     color: var(--secondary-button);
     z-index:999;
 }
@@ -380,12 +380,13 @@ transition: 0.5s ease-in-out;
         width: 200px;
     }
     .header{
-        justify-content: flex-end;
+     padding-left: 10px;
+        justify-content: center;
         gap:40px;
     }
-    .right__side{
+    /* .right__side{
         width: 80px;
-    }
+    } */
 }
 
 @media(max-width:350px){
