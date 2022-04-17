@@ -1,8 +1,16 @@
+import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import Header from "../components/home/header"
+import { UserDetails } from "../context/usercontext"
 import  '../styles/initial.css'
 export      default function    InitailFunction(){
     const   navigate=useNavigate()
+    const   {state:{user}}=useContext(UserDetails)
+    useEffect(()=>{
+if(user){
+   navigate('/dashboard')
+}
+    },[user])
     return  (
        <div>
            <Header/>

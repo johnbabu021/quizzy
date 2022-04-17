@@ -12,6 +12,7 @@ import {  findUserFromId, handleVerifyEmail, updateUserProfile } from "../servic
 import VerifiedIcon from '@mui/icons-material/Verified';
 import  '../styles/profile.css'
 import Swal from "sweetalert2"
+import { useLocation, useNavigate } from "react-router-dom"
 
 
 export      default function        Profile(){
@@ -22,6 +23,8 @@ const   auth=getAuth()
     const       [verified,setVerified]=useState(false)
     const       [userData,setUserData]=useState(null)
     const       [error,setError]=useState(false)
+    const       navigate=useNavigate()
+    const       location=useLocation()
     // console.log(userData)
     useEffect(()=>{
 if(user){
@@ -35,6 +38,10 @@ if(user){
 })
 setVerified(user?.emailVerified)
     // console.log(data)
+}
+else{
+    dispatch({type:'location',pathName:location})
+    navigate('/login')
 }
     },[user])
     const       saveProfile=()=>{
