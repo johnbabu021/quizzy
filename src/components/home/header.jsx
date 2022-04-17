@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import  '../../styles/home/header/header.css'
 // import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut  } from "firebase/auth";
+import { getAuth, signOut  } from "firebase/auth";
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import {  UserDetails } from '../../context/usercontext';
@@ -19,7 +19,7 @@ export  default     function        Header({CodeRef}){
     const   navigate=useNavigate()
     const   [Null,setNull]=useState('')
     const   joinCode=InputHandler('')
-   
+    const   location=useLocation()
     const   {state:{user,pop},dispatch} =useContext(UserDetails)
 //   if(typeof window==="Object"){
 
@@ -40,7 +40,7 @@ if(userDetails&&!details.contains(e.target)&&!parentDiv.contains(e.target)){
    
     //   initializeApp(firebaseConfig)
       const auth = getAuth();
-      const provider = new GoogleAuthProvider();
+    //   const provider = new GoogleAuthProvider();
 
 useEffect(()=>{
     const   button=document.querySelectorAll('.buttons')
@@ -65,20 +65,9 @@ useEffect(()=>{
 
 const   login={
    onClick:(e)=>{
-       e.target.classList.add('pressed__login')
-       setTimeout(()=>{
-           e.target.classList.remove('pressed__login')
-       },200)
-        signInWithPopup(auth,provider)
-    .then((result)=>
-    {
-        dispatch({type:'login',user:result.user})
-        localStorage.setItem('user',JSON.stringify(result?.user))
-        
-    }
-    ).catch((e)=>{
-        console.log(e)
-    })
+    dispatch({type:'location',pathName:location})
+
+      navigate('/login')
 
 }
 }

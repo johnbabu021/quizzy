@@ -1,6 +1,6 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Header from "../components/home/header";
 import Sidebar from "../components/sidebar/sidebar";
 import  '../styles/home/teacherContent/home.css'
@@ -11,8 +11,10 @@ import  '../styles/singleReportId.css'
 export  default function    ReportId(){
 
     const   {id}=useParams()
-    const   {state:{user}}=useContext(UserDetails)
+    const   {state:{user},dispatch}=useContext(UserDetails)
     const       [completedDetails,setCompletedDetails]=useState([])
+    const       navigate=useNavigate()
+    const       location=useLocation()
 console.log(completedDetails)
     useEffect(()=>{
         if(user){
@@ -36,6 +38,11 @@ console.log(dataConverter)
             })
 
         }
+        else{
+            dispatch({type:'location',pathName:location})
+
+            navigate('/login')
+          }
     },[user,id])
 
 

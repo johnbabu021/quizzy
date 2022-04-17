@@ -25,6 +25,7 @@
     justify-content: center;
     min-height: 80vh;
 }
+
 .game__button__home{
     width:200px;
     height: 50px;
@@ -384,10 +385,11 @@ width: 90%;
   @media(max-width:750px){
     .teacher__component{
         gap: 1rem;
+/* max-width: 99vw; */
         margin-right: 0px;
         flex-direction: column;
         justify-content: center;
-        width: 100vw;
+        /* width: 100vw; */
     }
     .header__home{
         flex-direction: column;
@@ -395,6 +397,7 @@ width: 90%;
     }
       .teacher__contents{
           overflow: hidden;
+          /* max-width: 90vw; */
           padding-top: 80px;
       }
     .dash__banner>img{

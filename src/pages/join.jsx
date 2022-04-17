@@ -1,7 +1,7 @@
 import { arrayUnion, collection, doc, onSnapshot, query, updateDoc, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Header from "../components/home/header";
 import Loading from "../components/loader/Loading";
 import Sidebar from "../components/sidebar/sidebar";
@@ -14,8 +14,10 @@ asdfasdfadsf
 */
 export  default function    Join(){
     const   [details,setDetails]=useState(null)
-    const   {state:{user}}=useContext(UserDetails)
+    const   {state:{user},dispatch}=useContext(UserDetails)
+    const    navigate=useNavigate()
     const   {id}=useParams()
+    const       location=useLocation()
     useEffect(()=>{
    
          const      initialCaller=async()=>{
@@ -52,7 +54,10 @@ onSnapshot(q,(onSnapshot)=>{
  
  }
  else{
+    dispatch({type:'location',pathName:location})
+    navigate('/login')
    return  setDetails(doc.data())
+  
 
  }
          })
@@ -83,7 +88,7 @@ onSnapshot(q,(onSnapshot)=>{
 <div    className="teacher__contents">
 
 {details?<MajorQuiz  item={{results:details.questionItems}} id={id}/>:
-<Loading/>}
+<Loading height={'100vh'}/>}
 </div>
 
 

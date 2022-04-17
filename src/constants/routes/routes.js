@@ -9,6 +9,7 @@ import ReportId from "../../pages/reportId";
 import MyLibrary from "../../pages/myLibrary";
 import Join from "../../pages/join";
 import Profile from "../../core/profile";
+import  Login from '../../pages/login'
 
  const       routes=[
  
@@ -49,6 +50,10 @@ element:<InitailFunction/>
     {
         path:ROUTES.PROFILE,
         element:<Profile/>
+    },
+    {
+        path:ROUTES.LOGIN,
+        element:<Login/>
     }
 ]
 

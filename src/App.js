@@ -51,7 +51,8 @@ console.log('alreay a user')
                           name:user.displayName,
                           email:user.email,
                           image:user.photoURL,
-                          uid:user.uid
+                          uid:user.uid,
+                          verified:false
                         })
                         // console.log('docRef is',docRef.id)
                       }

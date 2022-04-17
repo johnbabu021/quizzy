@@ -29,6 +29,7 @@
     user-select: none;
 }
 .profile__parent{
+    
     padding-top: 5em;
     display: flex;
     position: absolute;
@@ -36,7 +37,8 @@
       padding-bottom: 40px;
     left:30px;
     flex-direction: column;
-    gap:2em;
+    /* gap:2em; */
+    justify-content: space-around;
 }
 .profile__container>img {
     width: 100px;
@@ -56,7 +58,7 @@
 .profile__container{
     display: flex;
     user-select: none;
-    height: 150px;
+        t: 150px;
     align-items: center;
     /* justify-content: center; */
     gap:40px;
@@ -99,6 +101,19 @@
     gap:4rem;
     color: #ff7777;
 }
+.success{
+    font-size: 14px;
+    /* display: flex; */
+
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    /* gap:rem; */
+    color: var(--secondary-button);
+}
+.success>.MuiSvgIcon-root{
+    font-size: 20px !important;
+}
 .info{
     user-select: none;
     font-size: 18px;
@@ -136,6 +151,47 @@
     left: 0;
     background-color: var(--secondary-button);
 }
+.out>button::after{
+background-color: rgb(173, 86, 86) !important;
+
+}
+
 .input>button:hover::after{
 transform: translateX(0%);
+}
+
+.error{
+    border: 2px solid red !important;
+}
+
+@media(max-width:650px){
+   .alert{
+       flex-direction: column;
+       align-items: flex-start;
+   }
+
+   .profile__parent{
+       height: 800px;
+       padding-bottom: 100px;
+   }
+
+    .profile__container{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .name__container{
+        align-self: flex-start;
+    }
+    
+    .col{
+        flex-direction: column;
+        /* color: red !important; */
+    }
+}
+
+@media(max-width:350px){
+    .profile__cover{
+        min-width: 90vw;
+    }
+    
 }

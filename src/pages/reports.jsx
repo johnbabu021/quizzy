@@ -2,7 +2,7 @@ import Header from '../components/home/header'
 import Sidebar from '../components/sidebar/sidebar'
 import  '../styles/report.css'
 import  '../styles/home/teacherContent/home.css'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import { db } from '../constants/firebase'
 import { UserDetails } from '../context/usercontext'
@@ -10,10 +10,10 @@ import {  collection, doc, onSnapshot, query, where } from 'firebase/firestore'
 
 
 export      default function    Report(){
-  const {state:{user}}=useContext(UserDetails)
+  const {state:{user},dispatch}=useContext(UserDetails)
     const       navigate=useNavigate()
     const   [created,setCreated]=useState([])
-
+  const   location=useLocation()
 
 useEffect(()=>{
  if(user)
@@ -40,6 +40,11 @@ useEffect(()=>{
 
   }
   initial()}
+  else{
+    dispatch({type:'location',pathName:location})
+
+    navigate('/login')
+  }
 },[user])
 
     //use this in single reports

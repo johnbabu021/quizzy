@@ -7,4 +7,5 @@ module.exports={
     MYLIBRARY:'/mylibrary',
     JOIN:'/join/:id',
     PROFILE:'/profile',
+    LOGIN:'/login'
 }

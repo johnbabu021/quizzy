@@ -53,7 +53,7 @@
 
 .border__normal{
 position: relative;
-color: var(--grey); 
+/* color: var(--grey);  */
 /* font-size: calc(8.75px + 8.25 * ((100vw - 480px) / 800)); */
 font-size: 15px;
 }

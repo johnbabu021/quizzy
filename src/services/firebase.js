@@ -1,7 +1,12 @@
 // import { applyActionCode, getAuth, sendSignInLinkToEmail } from "firebase/auth"
+// import { getAuth } from "firebase/auth"
 import { arrayUnion, collection, doc, getDocs, onSnapshot, query, updateDoc, where } from "firebase/firestore"
 // import { useState } from "react"
+// import { useState } from "react"
 import { db } from "../constants/firebase"
+import { verifyPasswordResetCode, confirmPasswordReset, getAuth, applyActionCode, sendEmailVerification, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useContext } from "react";
+import { UserDetails } from "../context/usercontext";
 
 export  const       completedCount=async(uid)=>{
     let   completed=0
@@ -52,10 +57,12 @@ const       user=await  getDocs(q)
 
 
 export  const   handleVerifyEmail=()=>{
-    // const   auth=getAuth()
-    // applyActionCode(auth).then((res)=>{
-    //     console.log('email verified')
-    // })
+
+   const        auth=getAuth()
+   sendEmailVerification(auth.currentUser)
+   .then(()=>{
+       console.log('email verification has send')
+   })
 
  
 
@@ -74,4 +81,22 @@ snaps.forEach(async(snap)=>{
         })
 }
 
+
+export  const   fetchUserQuizElements=(uid)=>{
+    // const       [state,setState]=useState(null)
+ try{
+    const       q=query(collection(db,"users"),where("uid","==",uid))
+  onSnapshot(q,(querySnapShot)=>{
+        querySnapShot.forEach((doc)=>{
+            console.log(doc.data().created.slice(1,4),"asdfasfdkasdjfkajdsfk")
+        
+        })
+    })
+ }
+ catch(e){
+     console.log(e)
+ } 
+
+
+}
 

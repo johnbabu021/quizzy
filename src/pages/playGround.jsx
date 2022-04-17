@@ -97,7 +97,7 @@ return(
    <button  className="like__btn"   onClick={()=>setLike(!like)}>{like?<FavoriteIcon/>:<FavoriteBorderIcon/>}</button>
      </div>
    
-    </div>)):<Loading/>}
+    </div>)):<Loading height={'60vh'}/>}
     </div>)
 }
 

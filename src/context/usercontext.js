@@ -8,7 +8,8 @@ export  default function    UserContext({children}){
         user:null,
         alert:'adsf',
         pop:false   ,
-        click:'Dashboard'      
+        click:'Dashboard',
+        pathName:null      
     
     }
     const   reducer=(state,action)=>{
@@ -22,6 +23,7 @@ export  default function    UserContext({children}){
             case 'sidebar':return   {...state,click:action.click}
             default :return state
             case    'innerWidth':return     {...state,width:action.width}
+            case    'location':return   {...state,pathName:action.pathName}
         }
     }
     const   [state,dispatch]=useReducer(reducer,initialState)

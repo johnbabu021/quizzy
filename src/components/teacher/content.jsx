@@ -3,8 +3,9 @@ import  '../../styles/home/teacherContent/home.css'
 import Sidebar from '../sidebar/sidebar'
 import { useNavigate } from 'react-router-dom'
 import { UserDetails } from '../../context/usercontext'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 // import Aos from 'aos'
+import {fetchUserQuizElements} from '../../services/firebase'
 
 // import InputHandler from '../../hooks/InputHandler'
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -20,6 +21,13 @@ export  default     function    TeacherContent({CodeRef}){
 const   {state:{user}}=useContext(UserDetails)
 const    compl=useState(localStorage.getItem('completed'))
 const    patci=useState(localStorage.getItem('participated'))
+// console.log(user,"user data")
+useEffect(()=>{
+    if(user){
+   const    data= fetchUserQuizElements(user.uid)
+console.log(data,"john ishere")
+}
+},[user])
 
     return(
 

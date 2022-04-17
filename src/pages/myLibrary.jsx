@@ -9,10 +9,21 @@ import BookMark from "../core/bookmark";
 import Completed from "../core/completed";
 import Status from "../core/status";
 import Participated from "../core/participated";
+import { useContext } from "react";
+import { UserDetails } from "../context/usercontext";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 export  default function    MyLibrary(){
-
+const       {state:{user},dispatch}=useContext(UserDetails)
 const   [name,setName]=useState('practise')
-
+const       navigate=useNavigate()
+const   location=useLocation()
+useEffect(()=>{
+if(!user){
+    dispatch({type:'location',pathName:location})
+    navigate('/login')
+}
+},[user])
 
     return(
         <div>
