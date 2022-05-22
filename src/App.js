@@ -47,13 +47,16 @@ console.log('alreay a user')
                       }
                       else{
                       try{
-                       await    addDoc(collection(db,"users"),{
-                          name:user.displayName,
-                          email:user.email,
-                          image:user.photoURL,
-                          uid:user.uid,
-                          verified:false
-                        })
+                       ///please fix the bug  appearing here
+                  //  await    addDoc(collection(db,"users"),{
+                  //         name:user.displayName,
+                  //         email:user.email,
+                  //         image:user.photoURL,
+                  //         uid:user.uid,
+                  //         verified:false
+                  //       })
+                       console.table('this is not a stable condition')
+                        
                         // console.log('docRef is',docRef.id)
                       }
                       catch(e){

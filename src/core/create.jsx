@@ -29,18 +29,21 @@ export      default     function    Create(){
 {/* <label  htmlFor="game__name">Enter the Name of Game</label> */}
 <input  {...name} id="game__name"   placeholder="Enter the Name of Game" type="text"/>
 {/* <label  htmlFor="game__number"></label> */}
-<input  {...number}  id="game__number" placeholder="Enter the Number of Questions"   type="number"   max="100"/>
-<button className="submit__button"  onClick={(e)=>{
+<input  {...number}
+  id="game__number"
+ placeholder="Enter the Number of Questions" 
+   type="number" 
+     max="100"/>
+<button 
+className="submit__button" 
+ onClick={(e)=>{
     e.target.classList.add('submit__press')
     setTimeout(()=>{
         e.target.classList.remove('submit__press')
     },2000)
     if(name.value===''||number.value===''){
-//    setError('you must enter the name and number')
       toast.error('you must enter the name and number')
-
-
-}
+    }
 else{
    
 navigate(`/create/form?name=${name.value}&&number=${number.value}`)
