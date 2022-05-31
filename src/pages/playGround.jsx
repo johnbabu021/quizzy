@@ -14,8 +14,9 @@ export  default function    PlayGround(){
     const   [like,setLike]=useState(false)
     const   [category,setCategroy]=useState(undefined)
     const   [count,setCount]=useState([])
+
     // console.log(category)
-    console.log(count)
+    // console.log(count)
     const   [show,setShow]=useState(true)
 useEffect(()=>{
         async function   fetchData(){
@@ -29,7 +30,7 @@ fetchData()
     const   playGroundEvent={
        onClick:async(id)=> {
    
-    const   res=await   callApi(`https://opentdb.com/api.php?amount=10&category=${id}`)
+    const   res=await   callApi(`https://opentdb.com/api.php?amount=2&category=${id}`)
     if(typeof   res!=='undefined'){
         setShow(false)
         setCategroy(res)
@@ -62,7 +63,7 @@ return(
 <div    className="que__pulse"  onClick={
 ()=>{
     if(count?.find((data)=>data?.item===item.id)?.count)
-    console.log(count.indexOf(count?.find((data)=>data?.item===item.id)),'asdf')
+    // console.log(count.indexOf(count?.find((data)=>data?.item===item.id)),'asdf')
   setCount(count=>(  count.indexOf(count.find((data)=>data.item===item.id))!==-1?
     count.splice(count.indexOf(count.find((data)=>data.item===item.id)),1,
     {item:item.id,
@@ -100,7 +101,6 @@ return(
     </div>)):<Loading height={'60vh'}/>}
     </div>)
 }
-
  {typeof    category!=='undefined'&&( <MajorQuiz item={category}/>)  
 }
 </div>

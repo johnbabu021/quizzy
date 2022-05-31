@@ -1,4 +1,14 @@
 
+
+// todo
+// chart.js
+// implement
+// per day practise
+
+
+
+
+
 import  '../styles/playground/item/home.css'
 import { Button } from 'antd';
 import  '../styles/login/home.css'
@@ -6,7 +16,7 @@ import  '../styles/login/home.css'
 import { useContext, useState } from "react";
 import { useEffect } from "react";
 import      toast from 'react-hot-toast'
-import { arrayUnion, doc, onSnapshot, updateDoc } from 'firebase/firestore';
+import { addDoc, arrayRemove, arrayUnion, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
 import { db } from '../constants/firebase';
 // import { async } from '@firebase/util';
 import { UserDetails } from '../context/usercontext';
@@ -111,7 +121,7 @@ return  item.incorrect_answers.map(data=>{
  }
  }
  catch(e){
-     console.log(e)
+    //  console.log(e)
  }
  },[])
  useEffect(()=>{
@@ -168,6 +178,85 @@ setSubmit(false)
                 submitted.parentNode.children[1].classList.remove('red')
 if(results.length===1){
     setCompleted(true)
+    console.log('here is that')
+    console.log(id)
+    console.log(results.length)
+    if(id===null){
+        console.log('hi')
+
+const   docRef=localStorage.getItem('userDocId')
+        console.log(docRef,"docRef")
+        // let practise=0
+
+
+// console.log(doc.data().practise) 
+
+
+
+const   updationFunc=async()=>{
+    const       docData=await   getDoc(doc(db,"users",docRef))
+    
+docData.data().practise.forEach((data)=>{
+    console.log(data)
+if(data.date===`${new Date().getFullYear()} ${new Date().getMonth()} ${new Date().getDate()}`)
+{
+    console.log('same is found')
+    const       practiseCount=data.count
+   
+   const    sameDateRemoval=async()=>{
+    await   updateDoc(doc(db,"users",docRef),{
+        practise:arrayRemove({
+            count:practiseCount,
+            date:`${new Date().getFullYear()} ${new Date().getMonth()} ${new Date().getDate()}`
+        })
+    })
+
+   } 
+   sameDateRemoval()
+const   previousAddition=async()=>{
+    await   updateDoc(doc(db,'users',docRef),{
+        practise:arrayUnion({count:practiseCount+1,date:`${new Date().getFullYear()} ${new Date().getMonth()} ${new Date().getDate()}`})
+    })
+}
+   previousAddition()
+}
+
+else{
+    console.log('no same function')
+    const   newUpdation=async()=>{
+        await   updateDoc(doc(db,'users',docRef),{
+
+            practise:arrayUnion({count:1,date:`${new Date().getFullYear()} ${new Date().getMonth()} ${new Date().getDate()}`})
+        })
+    }
+    newUpdation()
+    
+}
+
+//experimental subject make sure it will happen
+                        // if(!data){
+                        //     console.log('no same function')
+                        //     const   newUpdation=async()=>{
+                        //         await   updateDoc(doc(db,'users',docRef),{
+
+                        //             practise:arrayUnion({count:1,date:`${new Date().getFullYear()} ${new Date().getMonth()} ${new Date().getDate()}`})
+                        //         })
+                        //     }
+                        //     newUpdation()
+                            
+                        // }
+})
+  
+}
+updationFunc()
+
+
+        
+            // console.log(practiseData)
+         
+            
+                
+    }
     if(id&&user){
         updateCompleted(user?.uid,id)
 
@@ -180,6 +269,7 @@ if(results.length===1){
 
        
     }
+
 }
                 correct.parentNode.children[1].classList.remove('da')
             newItem.shift()
@@ -188,7 +278,7 @@ if(results.length===1){
             toast.success('you submitted an answer')
         
             setResult([{id:0,option:results[0].correct_answer}])
-console.log(results)
+// console.log(results)
             for(let i=1;i<=results[0].incorrect_answers.length;i++){
             setResult(item=>[...item,{id:i,option:results[0].incorrect_answers[i-1]}])
         }
@@ -198,7 +288,7 @@ console.log(results)
         }
     }
   catch(e){
-      console.log(e)
+    //   console.log(e)
   }
   
 }
@@ -214,13 +304,13 @@ cont.setAttribute('data-pct',Number(score))
 
         <div    className="major__quiz">
     <div    className="quiz__elements">
-    {(results?.length!==0)?(
+    {(!completed)?(
        <form    id="ansform" className="answers">
 
            <p>{question}</p>
 {
     
-    result.length!==0&& result.sort(()=>0.5-Math.random())?.map(({id,option},index)=>{
+    results.length!==0&& result.sort(()=>0.5-Math.random())?.map(({id,option},index)=>{
           return(
           <div   key={index} className="ans">  
                     <input   type={'radio'}    id={`answer${id}`}   value={id}   name="game" />
@@ -234,7 +324,8 @@ cont.setAttribute('data-pct',Number(score))
 
            </form>
     ):(<div>{score} / {itemLength}</div>)}
- {!completed&&  <Button  className={`login_btn    submit `}   onClick={(e)=>handleQuestionSubmit(e)}>{!submit&&'Submit'}
+ {!completed&&  <Button  className={`login_btn    submit `} 
+   onClick={(e)=>handleQuestionSubmit(e)}>{!submit&&'Submit'}
 { submit&& 
  <svg    width={'60px'}  height="40px"  viewBox='0 0 36 46' className={`${submit&&'button__load'}`}>
    <circle

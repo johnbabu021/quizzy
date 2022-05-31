@@ -15,7 +15,7 @@ await   onSnapshot(query(collection(db,"created"),where('userDetails.id',"==",ui
     userData.forEach((singleUser)=>{
 // console.log(singleUser.data().completed)
 // console.log(singleUser.data().completed.length)
-console.log(singleUser.data())
+// console.log(singleUser.data())
 if(singleUser.data().completed.length>0){
 
     completed+=singleUser.data().completed.length
@@ -61,7 +61,7 @@ export  const   handleVerifyEmail=()=>{
    const        auth=getAuth()
    sendEmailVerification(auth.currentUser)
    .then(()=>{
-       console.log('email verification has send')
+    //    console.log('email verification has send')
    })
 
  
@@ -72,7 +72,7 @@ export  const   updateCompleted=(uid,id)=>{
     const       userDetails=findUserFromId(uid)
         onSnapshot(userDetails,(snaps)=>{
 snaps.forEach(async(snap)=>{
-    console.log(snap.data())
+    // console.log(snap.data())
     await   updateDoc(doc(db,'users',snap.id),{
         completed:arrayUnion({id:id})
     })
@@ -88,13 +88,13 @@ export  const   fetchUserQuizElements=(uid)=>{
     const       q=query(collection(db,"users"),where("uid","==",uid))
   onSnapshot(q,(querySnapShot)=>{
         querySnapShot.forEach((doc)=>{
-            console.log(doc.data().created.slice(1,4),"asdfasfdkasdjfkajdsfk")
+            // console.log(doc.data().created.slice(1,4),"asdfasfdkasdjfkajdsfk")
         
         })
     })
  }
  catch(e){
-     console.log(e)
+    //  console.log(e)
  } 
 
 

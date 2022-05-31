@@ -5,7 +5,7 @@ export  const   UserDetails=createContext(null)
 
 export  default function    UserContext({children}){
     const   initialState={
-        user:null,
+        user:localStorage.getItem('user'),
         alert:'adsf',
         pop:false   ,
         click:'Dashboard',

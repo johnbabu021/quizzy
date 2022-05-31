@@ -20,7 +20,7 @@ const   name=searchParams.get('name')
 const   number=searchParams.get('number')
 const   {state:{user}}=useContext(UserDetails)
 const [submit,setSubmit]=useState(false)
-console.log(submit)
+// console.log(submit)
   const     [gameElements,setGameElements]=useState([])
 let     [currentQuestion,setCurrentQuestion]=useState(0)
 const   [code,setCode]=useState(null)
@@ -124,7 +124,7 @@ else{
      
      }
      catch(e){
-         console.log(e)
+        //  console.log(e)
      }
      }
      get()

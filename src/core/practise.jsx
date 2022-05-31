@@ -8,7 +8,7 @@ export      default function    Practise(){
   const       input={value:Math.ceil(Math.random()*10)}
           const       identi=document.querySelector('.bar')
           const       cont=document.querySelector('.cont')
-          console.log(identi)
+          // console.log(identi)
   
           const   r=identi.getAttribute('r')
           const       c=Math.PI*(r*2)

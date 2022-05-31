@@ -12,7 +12,7 @@ const   CodeRef=useRef(null)
 const   {state:{user},dispatch}=useContext(UserDetails)
 const   navigate=useNavigate()
 const       location=useLocation()
-console.log(location.pathname)
+// console.log(location.pathname)
 useEffect(()=>{
 if(user){
     completedCount(user.uid)

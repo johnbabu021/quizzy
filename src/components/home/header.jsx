@@ -180,7 +180,7 @@ signOut(auth).then(()=>{
     dispatch({type:'logout'})
     localStorage.setItem('user',null)
 }).catch((e)=>{
-    console.log(e)
+    // console.log(e)
 })
             } 
             // else if (result.isDenied) {

@@ -15,7 +15,7 @@ export  default function    ReportId(){
     const       [completedDetails,setCompletedDetails]=useState([])
     const       navigate=useNavigate()
     const       location=useLocation()
-console.log(completedDetails)
+// console.log(completedDetails)
     useEffect(()=>{
         if(user){
 
@@ -23,7 +23,7 @@ console.log(completedDetails)
                 if(snapShot.data().completed.length>=0){
                     snapShot.data().completed.forEach(({id:dataConverter,score})=>{
                         const  q=   query(collection(db,'users'),where('uid','==',dataConverter))
-console.log(dataConverter)
+// console.log(dataConverter)
                                onSnapshot(q,(userDetails)=>{
                                 //   userDetails.forEach((item)=>    console.log(item.data()))
                             userDetails.forEach((singleUser)=>{

@@ -25,7 +25,7 @@ const    patci=useState(localStorage.getItem('participated'))
 useEffect(()=>{
     if(user){
    const    data= fetchUserQuizElements(user.uid)
-console.log(data,"john ishere")
+// console.log(data,"john ishere")
 }
 },[user])
 

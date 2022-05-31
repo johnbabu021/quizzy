@@ -7,7 +7,7 @@ import  '../styles/bookmark.css'
 export      default function    BookMark(){
     const   {state:{user}}=useContext(UserDetails)
     const   [bookMark,setBookMark]=useState([])
-    console.log(bookMark)
+    // console.log(bookMark)
     useEffect(()=>{
 if(user){
     const        userContent= findUserFromId(user?.uid)

@@ -9,7 +9,7 @@ const   [quiz,setQuiz]=useState([])
 /*
 made sychronous useeffect
 */
-console.log(quiz)
+// console.log(quiz)
     useEffect(()=>{
    const        callerFunc=async()=>{
     if(user){
@@ -20,7 +20,7 @@ console.log(quiz)
                    compl.push(...snap.data().completed)
                    compl.forEach((createdSnap)=>{
                     onSnapshot(doc(db,'created',createdSnap.id),(snaps)=>{
-                        console.log(snaps.data())
+                        // console.log(snaps.data())
                         setQuiz((quiz)=>[...quiz,snaps.data()])
                     })
                 })

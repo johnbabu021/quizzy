@@ -17,7 +17,7 @@ const   navigate=useNavigate()
 
     let from = pathName?.pathname || "/";
     // console.log(location.state)
-console.log(pathName)
+// console.log(pathName)
 useEffect(()=>{
     if(user){
         navigate(from,{replace:true})
@@ -38,7 +38,7 @@ useEffect(()=>{
 
          }
          ).catch((e)=>{
-             console.log(e)
+            //  console.log(e)
          })
 
      }

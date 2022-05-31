@@ -41,3 +41,13 @@ transition: 0.5s ease-in-out;
 .login__container:hover{
     opacity: 0.9;
 }
+.login_btn{
+    background-color: var(--secondary-button) !important;
+    outline: none;
+    width: 100px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color :white;
+}

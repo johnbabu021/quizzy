@@ -5,6 +5,25 @@ dashboard dispatch event on refresh
 didn't change
 */
 
+// else{
+//   try{
+//    ///please fix the bug  appearing here
+// await    addDoc(collection(db,"users"),{
+//       name:user.displayName,
+//       email:user.email,
+//       image:user.photoURL,
+//       uid:user.uid,
+//       verified:false
+//     })
+//    console.table('this is not a stable condition')
+    
+//     // console.log('docRef is',docRef.id)
+//   }
+//   catch(e){
+//     console.log(e)
+//   }
+//   }
+
 import { Routes, Route } from "react-router-dom";
 import routes from './constants/routes/routes';
 import { useContext, useEffect } from 'react';
@@ -27,48 +46,32 @@ function App() {
   useEffect(()=>{
                   async function    initialize(){
                     const auth=getAuth();
-                    onAuthStateChanged(auth,(user)=>{
+
+                    onAuthStateChanged(auth,async(user)=>{
                       if(user){
                         dispatch({type:'login',user:user})
                           localStorage.setItem('user',JSON.stringify(user))
-
-                        
+                        const   existinguser=localStorage.getItem('userDocId')
+                        console.log('existing user is here')
+if(!JSON.parse(existinguser)){
+  const   docRef=await    addDoc(collection(db,"users"),{
+    name:user.displayName,
+    email:user.email,
+    image:user.photoURL,
+    uid:user.uid,
+    pracitse:[],
+    verified:false
+  })
+  localStorage.setItem('userDocId',docRef.id)
+}                       
                       }
-                      else{
-                        // console.log('asdf')
-                      }
+                   
                     })
-                  if(user){
-                    // console.log(user)
-                    const   querySnapShot=await getDocs(collection(db,"users"))
-                    querySnapShot.forEach(async(doc)=>{
-                      if(doc.data().email===user.email){
-console.log('alreay a user')
-                      }
-                      else{
-                      try{
-                       ///please fix the bug  appearing here
-                   await    addDoc(collection(db,"users"),{
-                          name:user.displayName,
-                          email:user.email,
-                          image:user.photoURL,
-                          uid:user.uid,
-                          verified:false
-                        })
-                       console.table('this is not a stable condition')
-                        
-                        // console.log('docRef is',docRef.id)
-                      }
-                      catch(e){
-                        console.log(e)
-                      }
-                      }
-                    })
-                  }
+               
                   }
               initialize()
   }
-    ,[user,dispatch])
+    ,[])
 
 useEffect(()=>{
 const   userDetails=localStorage.getItem('user')

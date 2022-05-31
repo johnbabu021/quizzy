@@ -5,7 +5,7 @@ let   apiurl=await   fetch(url)
 .then((result)=>result)
 .catch((err)=>
    {
-    console.log(err)   
+    // console.log(err)   
     throw    new Error(err,"Internal   server   error")
 })
     return  apiurl
